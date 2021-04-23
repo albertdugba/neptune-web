@@ -57,11 +57,23 @@ class MyApp extends App {
         <Head>
           <title>Neptune Web - the Wise Design System on Web</title>
           <link rel="icon" href={`${process.env.ASSET_PREFIX}/static/assets/favicon.ico`} />
+          <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"
+          />
         </Head>
 
         <Layout>
           <Component {...pageProps} />
         </Layout>
+        <script
+          type="text/javascript"
+          src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"
+        />
+        <script
+          type="text/javascript"
+          src={`${process.env.ASSET_PREFIX}/static/assets/docsearch.js`}
+        />
       </Provider>
     );
   }
