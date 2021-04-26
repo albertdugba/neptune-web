@@ -22,7 +22,7 @@ const Layout = ({ children, router: { pathname } }) => {
 
   const firstContent = (
     <div className="Header__Fixed" role="navigation" aria-label="Primary navigation">
-      <input type="text" placeholder="Global search..." id="the-search" />
+      <input type="text" autoComplete="off" placeholder="Global search..." id="the-search" />
       <div className="Header__Brand">
         <Link href="/">
           <a className="Logo">
