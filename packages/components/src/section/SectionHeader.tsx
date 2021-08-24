@@ -1,8 +1,8 @@
 import Button from '../button';
-import { Priority } from '../common';
+import { AriaLabelProperty, Priority } from '../common';
 
 export type SectionHeaderProps = {
-  action?: {
+  action?: AriaLabelProperty & {
     title: string;
     onClick: () => void;
   };
@@ -12,7 +12,7 @@ export type SectionHeaderProps = {
 /**
  * Section docs.
  *
- * @example <SectionHeader title="Invite your friends" />
+ * @example <SectionHeader title="Invite your friends" action={{ title: 'Copy link' action: () => copy() }} />
  */
 
 export const SectionHeader = ({ action, title }: SectionHeaderProps) => {
@@ -21,6 +21,7 @@ export const SectionHeader = ({ action, title }: SectionHeaderProps) => {
       <span className="h5 np-section-header--title">{title}</span>
       {action && (
         <Button
+          aria-label={action['aria-label']}
           className="np-section-header--action"
           priority={Priority.TERTIARY}
           onClick={action.onClick}

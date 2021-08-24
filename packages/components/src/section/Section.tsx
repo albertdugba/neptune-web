@@ -9,7 +9,7 @@ type SectionProps = PropsWithChildren<{
 /**
  * Section docs.
  *
- * @example <Section header={{ title: Section title }} />
+ * @example <Section header={{ title: 'Invite your friends' action: { title: 'Copy link' action: () => copy() } }}>...</Section>
  */
 
 const Section = ({ children, header }: SectionProps) => {

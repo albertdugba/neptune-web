@@ -30,7 +30,28 @@ describe('Section', () => {
       />,
     );
 
-    fireEvent.click(screen.getByText('Click me!'));
+    fireEvent.click(screen.getByRole('button', { name: 'Click me!' }));
+
+    expect(onSectionHeaderActionClick).toHaveBeenCalledTimes(1);
+  });
+
+  it('can set aria-label property for section header action', () => {
+    const onSectionHeaderActionClick = jest.fn();
+
+    render(
+      <Section
+        header={{
+          title: 'Section title',
+          action: {
+            'aria-label': 'Magic',
+            title: 'Click me!',
+            onClick: onSectionHeaderActionClick,
+          },
+        }}
+      />,
+    );
+
+    fireEvent.click(screen.getByRole('button', { name: 'Magic' }));
 
     expect(onSectionHeaderActionClick).toHaveBeenCalledTimes(1);
   });

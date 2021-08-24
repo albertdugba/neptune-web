@@ -41,6 +41,7 @@ export const WithHeaderAction = () => {
       header={{
         title: 'Section title',
         action: {
+          'aria-label': 'Magic',
           title: 'Click me!',
           onClick: () => alert('Action!'),
         },
