@@ -56,6 +56,7 @@ export { default as OverlayHeader } from './overlayHeader';
 export { default as Image } from './image';
 export { default as Markdown } from './markdown';
 export { default as Card } from './card';
+export { default as Section } from './section';
 export { default as Summary } from './summary';
 export { default as Switch } from './switch';
 export { default as SwitchOption } from './switchOption';

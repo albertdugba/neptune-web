@@ -1,0 +1,24 @@
+import { PropsWithChildren } from 'react';
+
+import { SectionHeader, SectionHeaderProps } from './SectionHeader';
+
+type SectionProps = PropsWithChildren<{
+  header?: SectionHeaderProps;
+}>;
+
+/**
+ * Section docs.
+ *
+ * @example <Section header={{ title: Section title }} />
+ */
+
+const Section = ({ children, header }: SectionProps) => {
+  return (
+    <div className="np-section--container">
+      {header && <SectionHeader title={header.title} />}
+      {children}
+    </div>
+  );
+};
+
+export default Section;
