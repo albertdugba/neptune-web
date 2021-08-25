@@ -1,9 +1,8 @@
 .np-section-header--container {
-  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  max-width: 100%;
   margin: 0 var(--size-16);
   padding: var(--size-16) 0;
   border-bottom: 1px solid var(--color-border-neutral);
@@ -14,7 +13,6 @@
 }
 
 .np-section-header--action {
-  position: absolute;
-  right: 0;
+  min-height: 0;
   padding: 0;
 }

@@ -14,17 +14,14 @@ const AccordionItem = ({ id, title, content, onClick, open, icon, theme }) => {
   return (
     <div
       id={id}
-      className={classNames('tw-accordion-item decision p-a-0', `tw-accordion-item--${theme}`, {
+      className={classNames('tw-accordion-item p-a-0', `tw-accordion-item--${theme}`, {
         closed: !open,
       })}
     >
       <button
         type="button"
         aria-expanded={open}
-        className={classNames('tw-accordion-item btn btn-link p-x-0 text-no-decoration p-t-3', {
-          'p-b-3': !open,
-          'p-b-2': open,
-        })}
+        className={classNames('tw-accordion-item btn btn-link text-no-decoration decision')}
         onClick={onClick}
       >
         <div className="media">
@@ -60,9 +57,11 @@ const AccordionItem = ({ id, title, content, onClick, open, icon, theme }) => {
       </button>
       <div className="accordion-content media">
         <div
-          className={classNames('media-body p-b-3', {
+          className={classNames('media-body p-t-2 p-b-3', {
             'm-l-5': icon || isRTL,
             'm-r-5': icon,
+            'p-l-2': !isRTL,
+            'p-r-2': isRTL,
           })}
           aria-hidden={!open}
         >

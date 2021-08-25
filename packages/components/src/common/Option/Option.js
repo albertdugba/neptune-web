@@ -21,7 +21,7 @@ const Option = ({
   showMediaCircle,
 }) => (
   <Element
-    className={classNames(className, 'media', {
+    className={classNames(className, {
       'decision-complex': complex,
       decision,
       disabled,
@@ -33,26 +33,28 @@ const Option = ({
     disabled={disabled && Element === 'button'}
     onClick={onClick}
   >
-    {media && (
-      <div className="media-left">
-        {showMediaCircle ? (
-          <div
-            className={classNames('circle circle-sm text-primary', {
-              'circle-inverse': inverseMediaCircle,
-            })}
-          >
-            {media}
-          </div>
-        ) : (
-          <div className="tw-option__no-media-circle">{media}</div>
-        )}
+    <div className="media">
+      {media && (
+        <div className="media-left">
+          {showMediaCircle ? (
+            <div
+              className={classNames('circle circle-sm text-primary', {
+                'circle-inverse': inverseMediaCircle,
+              })}
+            >
+              {media}
+            </div>
+          ) : (
+            <div className="tw-option__no-media-circle">{media}</div>
+          )}
+        </div>
+      )}
+      <div className="media-body">
+        <div className="h5">{title}</div>
+        {content && <div className="decision__content">{content}</div>}
       </div>
-    )}
-    <div className="media-body">
-      <div className="h5">{title}</div>
-      {content && <div className="decision__content">{content}</div>}
+      <div className="media-right">{button}</div>
     </div>
-    <div className="media-right">{button}</div>
   </Element>
 );
 
