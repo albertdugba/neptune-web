@@ -5,11 +5,11 @@ exports[`Accordion defaults renders an empty list when no items are passed 1`] =
 exports[`Accordion open and close opens an item when clicked 1`] = `
 <div>
   <div
-    class="tw-accordion-item decision p-a-0 tw-accordion-item--light"
+    class="tw-accordion-item p-a-0 tw-accordion-item--light"
   >
     <button
       aria-expanded="true"
-      class="tw-accordion-item btn btn-link p-x-0 text-no-decoration p-t-3 p-b-2"
+      class="tw-accordion-item btn btn-link text-no-decoration decision"
       type="button"
     >
       <div
@@ -73,18 +73,18 @@ exports[`Accordion open and close opens an item when clicked 1`] = `
     >
       <div
         aria-hidden="false"
-        class="media-body p-b-3 m-l-5 m-r-5"
+        class="media-body p-t-2 p-b-3 m-l-5 m-r-5 p-l-2"
       >
         Lauri Ipsum has been the industry standard dummy text ever since the 1500s.
       </div>
     </div>
   </div>
   <div
-    class="tw-accordion-item decision p-a-0 tw-accordion-item--light closed"
+    class="tw-accordion-item p-a-0 tw-accordion-item--light closed"
   >
     <button
       aria-expanded="false"
-      class="tw-accordion-item btn btn-link p-x-0 text-no-decoration p-t-3 p-b-3"
+      class="tw-accordion-item btn btn-link text-no-decoration decision"
       type="button"
     >
       <div
@@ -153,18 +153,18 @@ exports[`Accordion open and close opens an item when clicked 1`] = `
     >
       <div
         aria-hidden="true"
-        class="media-body p-b-3 m-l-5 m-r-5"
+        class="media-body p-t-2 p-b-3 m-l-5 m-r-5 p-l-2"
       >
         Lauri Ipsum is simply dummy text of the printing and typesetting industry.
       </div>
     </div>
   </div>
   <div
-    class="tw-accordion-item decision p-a-0 tw-accordion-item--light closed"
+    class="tw-accordion-item p-a-0 tw-accordion-item--light closed"
   >
     <button
       aria-expanded="false"
-      class="tw-accordion-item btn btn-link p-x-0 text-no-decoration p-t-3 p-b-3"
+      class="tw-accordion-item btn btn-link text-no-decoration decision"
       type="button"
     >
       <div
@@ -233,7 +233,7 @@ exports[`Accordion open and close opens an item when clicked 1`] = `
     >
       <div
         aria-hidden="true"
-        class="media-body p-b-3 m-l-5 m-r-5"
+        class="media-body p-t-2 p-b-3 m-l-5 m-r-5 p-l-2"
       >
         Lauri Ipsum has been the industry standard dummy text ever since the 1500s.
       </div>
