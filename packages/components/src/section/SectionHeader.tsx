@@ -17,12 +17,12 @@ export type SectionHeaderProps = {
 
 export const SectionHeader = ({ action, title }: SectionHeaderProps) => {
   return (
-    <div className="np-section-header--container">
-      <span className="h5 np-section-header--title">{title}</span>
+    <div className="np-section-header__container">
+      <span className="h5 np-section-header__title">{title}</span>
       {action && (
         <Button
           aria-label={action['aria-label']}
-          className="np-section-header--action"
+          className="np-section-header__action"
           priority={Priority.TERTIARY}
           onClick={action.onClick}
         >

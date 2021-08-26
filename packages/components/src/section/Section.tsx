@@ -14,7 +14,7 @@ type SectionProps = PropsWithChildren<{
 
 const Section = ({ children, header }: SectionProps) => {
   return (
-    <div className="np-section--container">
+    <div className="np-section__container">
       {header && <SectionHeader {...header} />}
       {children}
     </div>
