@@ -119,13 +119,14 @@ export const WithNavigationOptions = () => {
   );
 };
 
-export const WithCard = () => {
-  const [isCardExpanded, setIsCardExpanded] = useState(false);
+export const WithCards = () => {
+  const [isCard1Expanded, setIsCard1Expanded] = useState(false);
+  const [isCard2Expanded, setIsCard2Expanded] = useState(false);
 
   return (
     <Section
       header={{
-        title: 'Section with card',
+        title: 'Section with cards',
       }}
     >
       {/* @ts-expect-error TODO: remove once Card is migrated to TypeScript */}
@@ -133,8 +134,23 @@ export const WithCard = () => {
         title="What's in the box?!"
         details="Click me to reveal."
         icon={<FastFlagIcon size={24} />}
-        isExpanded={isCardExpanded}
-        onClick={() => setIsCardExpanded(!isCardExpanded)}
+        isExpanded={isCard1Expanded}
+        onClick={() => setIsCard1Expanded(!isCard1Expanded)}
+      >
+        <div>
+          Hello there!{' '}
+          <span role="img" aria-label="smiling face with squinting eyes">
+            😊
+          </span>
+        </div>
+      </Card>
+      {/* @ts-expect-error TODO: remove once Card is migrated to TypeScript */}
+      <Card
+        title="What's in the box?!"
+        details="Click me to reveal."
+        icon={<FastFlagIcon size={24} />}
+        isExpanded={isCard2Expanded}
+        onClick={() => setIsCard2Expanded(!isCard2Expanded)}
       >
         <div>
           Hello there!{' '}

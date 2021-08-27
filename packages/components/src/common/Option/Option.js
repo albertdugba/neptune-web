@@ -2,6 +2,9 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import requiredIf from 'react-required-if';
 
+import Avatar from '../../avatar';
+import { Size } from '../propsValues/size';
+
 const Option = ({
   as: Element,
   href,
@@ -21,11 +24,11 @@ const Option = ({
   showMediaCircle,
 }) => (
   <Element
-    className={classNames(className, {
+    className={classNames('np-option', className, {
       'decision-complex': complex,
       decision,
       disabled,
-      'tw-option__sm-media': showMediaAtAllSizes,
+      'np-option__sm-media': showMediaAtAllSizes,
     })}
     href={href}
     htmlFor={htmlFor}
@@ -45,13 +48,13 @@ const Option = ({
               {media}
             </div>
           ) : (
-            <div className="tw-option__no-media-circle">{media}</div>
+            <div className="np-option__no-media-circle">{media}</div>
           )}
         </div>
       )}
       <div className="media-body">
         <div className="h5">{title}</div>
-        {content && <div className="decision__content">{content}</div>}
+        {content && <div className="np_card__content">{content}</div>}
       </div>
       <div className="media-right">{button}</div>
     </div>

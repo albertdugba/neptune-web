@@ -20,7 +20,8 @@
       id: 'Item 3',
     },
   ];
-  const [isCardExpanded, setIsCardExpanded] = React.useState(false);
+  const [isCard1Expanded, setIsCard1Expanded] = React.useState(false);
+  const [isCard2Expanded, setIsCard2Expanded] = React.useState(false);
 
   return (
     <>
@@ -54,15 +55,29 @@
       </Section>
       <Section
         header={{
-          title: 'Section with card',
+          title: 'Section with cards',
         }}
       >
         <Card
           title="What's in the box?!"
           details="Click me to reveal."
           icon={<FastFlagIcon size={24} />}
-          isExpanded={isCardExpanded}
-          onClick={() => setIsCardExpanded(!isCardExpanded)}
+          isExpanded={isCard1Expanded}
+          onClick={() => setIsCard1Expanded(!isCard1Expanded)}
+        >
+          <div>
+            Hello there!{' '}
+            <span role="img" aria-label="smiling face with squinting eyes">
+              😊
+            </span>
+          </div>
+        </Card>
+        <Card
+          title="What's in the box?!"
+          details="Click me to reveal."
+          icon={<FastFlagIcon size={24} />}
+          isExpanded={isCard2Expanded}
+          onClick={() => setIsCard2Expanded(!isCard2Expanded)}
         >
           <div>
             Hello there!{' '}
