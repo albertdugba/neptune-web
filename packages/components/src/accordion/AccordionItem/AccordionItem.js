@@ -29,8 +29,8 @@ const AccordionItem = ({ id, title, content, onClick, open, icon, theme }) => {
       {open && (
         <div
           className={classNames('np-accordion-item__content', {
-            'm-l-5': icon || isRTL,
-            'm-r-5': icon,
+            'icon-right': icon && isRTL,
+            'icon-left': icon,
           })}
         >
           {content}
