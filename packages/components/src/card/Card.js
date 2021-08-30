@@ -27,20 +27,19 @@ const Card = forwardRef((props, reference) => {
       ref={reference}
       className={classNames('np-card', className, {
         'np-card--open': isOpen,
+        'np-card--inactive': !children,
       })}
       id={id}
       data-testid={rest['data-testid']}
     >
       <div className={classNames('np-card__panel', { 'np-card__panel--expanded': isOpen })} />
       <Option
-        as="button"
-        className={classNames('np-card__button', {
-          'np-card__button--inactive': !children,
-        })}
+        as={children ? 'button' : 'div'}
+        className={classNames('np-card__button')}
         media={icon}
         title={title}
         content={details}
-        button={children && <Chevron orientation={isOpen ? Position.TOP : Position.DOWN} />}
+        button={children && <Chevron orientation={isOpen ? Position.TOP : Position.BOTTOM} />}
         onClick={() => children && onClick(!isExpanded)}
       />
       <div

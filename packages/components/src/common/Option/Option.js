@@ -31,6 +31,7 @@ const Option = ({
     htmlFor={htmlFor}
     target={target}
     disabled={disabled && Element === 'button'}
+    aria-label={title}
     onClick={onClick}
   >
     <div className="media">
