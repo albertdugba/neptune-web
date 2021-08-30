@@ -2,9 +2,6 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import requiredIf from 'react-required-if';
 
-import Avatar from '../../avatar';
-import { Size } from '../propsValues/size';
-
 const Option = ({
   as: Element,
   href,
