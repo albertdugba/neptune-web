@@ -2,16 +2,17 @@
   display: block;
   width: 100%;
 
+  &--open {
+    .media {
+      padding-bottom: var(--size-16);
+      border: 0;
+    }
+  }
+
   &.np-accordion-item--dark {
     .media-body,
     .h5 {
       color: var(--color-text-control);
-    }
-  }
-
-  &--open {
-    .media {
-      border: 0;
     }
   }
 }

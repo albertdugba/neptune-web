@@ -24,6 +24,7 @@ const AccordionItem = ({ id, title, content, onClick, open, icon, theme }) => {
         media={iconElement}
         title={title}
         button={<Chevron orientation={open ? Position.TOP : Position.DOWN} />}
+        inverseMediaCircle={false}
         onClick={onClick}
       />
       {open && (
