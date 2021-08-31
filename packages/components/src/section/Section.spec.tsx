@@ -55,4 +55,17 @@ describe('Section', () => {
 
     expect(onSectionHeaderActionClick).toHaveBeenCalledTimes(1);
   });
+
+  it('can render header with specific heading tag', () => {
+    render(
+      <Section
+        header={{
+          as: 'h3',
+          title: 'Section title',
+        }}
+      />,
+    );
+
+    expect(screen.getByRole('heading', { name: 'Section title', level: 3 })).toBeInTheDocument();
+  });
 });
