@@ -2,9 +2,9 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { forwardRef } from 'react';
 
-import { Layout } from '../common';
+import { Layout } from '../propsValues/layouts';
 
-const Header = forwardRef((props, reference) => {
+const FlowHeader = forwardRef((props, reference) => {
   const { bottomContent, className, layout, leftContent, rightContent } = props;
   const isVertical = layout === Layout.VERTICAL;
 
@@ -44,7 +44,7 @@ const Header = forwardRef((props, reference) => {
   );
 });
 
-Header.defaultProps = {
+FlowHeader.defaultProps = {
   bottomContent: undefined,
   className: undefined,
   layout: Layout.HORIZONTAL,
@@ -52,7 +52,7 @@ Header.defaultProps = {
   rightContent: undefined,
 };
 
-Header.propTypes = {
+FlowHeader.propTypes = {
   bottomContent: PropTypes.node,
   className: PropTypes.string,
   layout: PropTypes.oneOf(['HORIZONTAL', 'VERTICAL']),
@@ -60,4 +60,4 @@ Header.propTypes = {
   rightContent: PropTypes.node,
 };
 
-export default Header;
+export default FlowHeader;

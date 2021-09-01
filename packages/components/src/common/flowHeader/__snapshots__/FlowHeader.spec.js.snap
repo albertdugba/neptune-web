@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Header renders as expected 1`] = `
+exports[`FlowHeader renders as expected 1`] = `
 <div>
   <div
     class="np-header d-flex flex-wrap className"
@@ -24,7 +24,7 @@ exports[`Header renders as expected 1`] = `
 </div>
 `;
 
-exports[`Header renders as expected with vertical layout 1`] = `
+exports[`FlowHeader renders as expected with vertical layout 1`] = `
 <div>
   <div
     class="np-header d-flex flex-wrap className"
