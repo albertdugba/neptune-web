@@ -1,15 +1,18 @@
 import { LiveEditorBlock, GeneratePropsTable } from '../../../utils';
-import { Accordion, Card, NavigationOption, Section } from '@transferwise/components';
+import { Accordion, Card, Header, NavigationOption, Section } from '@transferwise/components';
 import { FastFlag as FastFlagIcon } from '@transferwise/icons';
 import code from '../../../liveEditorCode/section.code';
 
-<LiveEditorBlock code={code} scope={{ Accordion, Card, FastFlagIcon, NavigationOption, Section }} />
+<LiveEditorBlock
+  code={code}
+  scope={{ Accordion, Card, FastFlagIcon, Header, NavigationOption, Section }}
+/>
 <GeneratePropsTable componentName="Section" />
 
 export const meta = {
   name: 'Section',
   badge: {
     type: 'new',
-    expiryDate: '2021-10-24',
+    expiryDate: '2021-11-01',
   },
 };

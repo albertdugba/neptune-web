@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 import Accordion from '../accordion';
 import Card from '../card';
+import Header from '../header';
 import NavigationOption from '../navigationOption';
 
 import Section from './Section';
@@ -24,49 +25,12 @@ export const Basic = () => {
 export const WithHeader = () => {
   return (
     <>
-      <Section
-        header={{
-          title: 'Section 1 title',
-        }}
-      >
+      <Section>
+        <Header title="Section 1 title" />
         Section 1 content
       </Section>
-      <Section
-        header={{
-          title: 'Section 2 title',
-        }}
-      >
-        Section 2 content
-      </Section>
-    </>
-  );
-};
-
-export const WithHeaderAction = () => {
-  return (
-    <>
-      <Section
-        header={{
-          title: 'Section 1 title',
-          action: {
-            'aria-label': 'Magic 1',
-            title: 'Click me!',
-            onClick: () => alert('Action 1!'),
-          },
-        }}
-      >
-        Section 1 content
-      </Section>
-      <Section
-        header={{
-          title: 'Section 2 title',
-          action: {
-            'aria-label': 'Magic 2',
-            title: 'Click me!',
-            onClick: () => alert('Action 2!'),
-          },
-        }}
-      >
+      <Section>
+        <Header title="Section 2 title" />
         Section 2 content
       </Section>
     </>
@@ -96,11 +60,8 @@ export const withAccordion = () => {
     },
   ];
   return (
-    <Section
-      header={{
-        title: 'Section with accordion',
-      }}
-    >
+    <Section>
+      <Header title="Section with accordion" />
       <Accordion items={items} indexOpen={0} />
     </Section>
   );
@@ -108,11 +69,8 @@ export const withAccordion = () => {
 
 export const WithNavigationOptions = () => {
   return (
-    <Section
-      header={{
-        title: 'Section with options',
-      }}
-    >
+    <Section>
+      <Header title="Section with options" />
       <NavigationOption title="Option 1" onClick={() => alert('Option 1')} />
       <NavigationOption title="Option 2" onClick={() => alert('Option 2')} />
     </Section>
@@ -124,11 +82,8 @@ export const WithCards = () => {
   const [isCard2Expanded, setIsCard2Expanded] = useState(false);
 
   return (
-    <Section
-      header={{
-        title: 'Section with cards',
-      }}
-    >
+    <Section>
+      <Header title="Section with cards" />
       {/* @ts-expect-error TODO: remove once Card is migrated to TypeScript */}
       <Card
         title="What's in the box?!"

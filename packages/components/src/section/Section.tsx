@@ -1,24 +1,16 @@
-import { PropsWithChildren } from 'react';
+import { ReactNode } from 'react';
 
-import { SectionHeader, SectionHeaderProps } from './SectionHeader';
-
-type SectionProps = PropsWithChildren<{
-  header?: SectionHeaderProps;
-}>;
-
+type SectionProps = {
+  children?: ReactNode;
+};
 /**
  * Section docs.
  *
- * @example <Section header={{ title: 'Invite your friends' action: { title: 'Copy link' action: () => copy() } }}>...</Section>
+ * @example <Section>Content</Section>
  */
 
-const Section = ({ children, header }: SectionProps) => {
-  return (
-    <div className="np-section__container">
-      {header && <SectionHeader {...header} />}
-      {children}
-    </div>
-  );
+const Section = ({ children }: SectionProps) => {
+  return <div className="np-section">{children}</div>;
 };
 
 export default Section;

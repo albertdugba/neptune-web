@@ -12,12 +12,14 @@
       content:
         'When you set up your transfer, we might ask for documents that show where your money comes from. Documents you might need (opens in a new tab)',
       id: 'Item 2',
+      icon: <FastFlagIcon size={24} />,
     },
     {
       title: 'Lorem ipsum',
       content:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed scelerisque velit nec ex rutrum efficitur sit amet at enim. Nam a neque magna. Nullam est urna, dignissim nec erat id, euismod aliquet nulla.',
       id: 'Item 3',
+      icon: <FastFlagIcon size={24} />,
     },
   ];
   const [isCard1Expanded, setIsCard1Expanded] = React.useState(false);
@@ -25,39 +27,22 @@
 
   return (
     <>
-      <Section
-        header={{
-          title: 'Section with action',
-          action: {
-            'aria-label': 'Magic',
-            title: 'Click me!',
-            onClick: () => alert('Action!'),
-          },
-        }}
-      >
+      <Section>This is a section.</Section>
+      <Section>
+        <Header title="Section with header" />
         Section content.
       </Section>
-      <Section>This is a section without a header.</Section>
-      <Section
-        header={{
-          title: 'Section with accordion',
-        }}
-      >
-        <Accordion items={items} indexOpen={0} />
+      <Section>
+        <Header title="Section with accordion" />
+        <Accordion items={items} />
       </Section>
-      <Section
-        header={{
-          title: 'Section with navigation options',
-        }}
-      >
+      <Section>
+        <Header title="Section with navigation options" />
         <NavigationOption title="Option 1" onClick={() => alert('Option 1')} />
         <NavigationOption title="Option 2" onClick={() => alert('Option 2')} />
       </Section>
-      <Section
-        header={{
-          title: 'Section with cards',
-        }}
-      >
+      <Section>
+        <Header title="Section with cards" />
         <Card
           title="What's in the box?!"
           details="Click me to reveal."
