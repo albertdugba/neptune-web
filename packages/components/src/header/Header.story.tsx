@@ -6,7 +6,7 @@ export default {
 };
 
 export const Basic = () => {
-  return <Header title="Header title" />;
+  return <Header as="h3" title="Header title" />;
 };
 
 export const WithAction = () => {
@@ -14,9 +14,9 @@ export const WithAction = () => {
     <Header
       title="Header title"
       action={{
-        'aria-label': 'Magic 1',
+        'aria-label': 'Magic',
         title: 'Click me!',
-        onClick: () => alert('Action 1!'),
+        onClick: () => alert('Action!'),
       }}
     />
   );
