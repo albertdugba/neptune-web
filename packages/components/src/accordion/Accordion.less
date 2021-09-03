@@ -26,11 +26,13 @@
   margin: calc(var(--size-24) * -1) var(--size-16) 0 var(--size-16);
   border-bottom: 1px solid var(--color-border-neutral);
 
-  &.icon-left {
-    padding-left: var(--size-56);
-  }
+  @media (--screen-xs) {
+    &.icon-left {
+      padding-left: var(--size-56);
+    }
 
-  &.icon-right {
-    padding-right: var(--size-56);
+    &.icon-right {
+      padding-right: var(--size-56);
+    }
   }
 }

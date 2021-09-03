@@ -44,7 +44,11 @@
 }
 
 .np-card__content {
-  padding: var(--size-24) var(--size-72);
+  padding: var(--size-24) var(--size-16);
+
+  @media (--screen-xs) {
+    padding: var(--size-24) var(--size-72);
+  }
 }
 
 .np-card__divider {
@@ -52,7 +56,9 @@
   margin: 0 var(--size-16);
   transition: margin 0.35s ease;
 
-  &--expanded {
-    margin: 0 var(--size-72);
+  @media (--screen-xs) {
+    &--expanded {
+      margin: 0 var(--size-72);
+    }
   }
 }
