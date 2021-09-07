@@ -16,11 +16,10 @@ export type HeaderProps = {
 };
 
 /**
- * Header docs.
  *
- * @example <Header title="Invite your friends" action={{ title: 'Copy link' action: () => copy() }} />
+ * Neptune Web: https://transferwise.github.io/neptune-web/components/content/Header
+ *
  */
-
 export const Header = ({ action, as: Element = 'span', title }: HeaderProps) => {
   return (
     <div className="np-header">
