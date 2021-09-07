@@ -16,7 +16,7 @@ describe('Header', () => {
       <Header
         title="Header title"
         action={{
-          title: 'Click me!',
+          text: 'Click me!',
           onClick: onHeaderActionClick,
         }}
       />,
@@ -35,7 +35,7 @@ describe('Header', () => {
         title="Header title"
         action={{
           'aria-label': 'Magic',
-          title: 'Click me!',
+          text: 'Click me!',
           onClick: onHeaderActionClick,
         }}
       />,

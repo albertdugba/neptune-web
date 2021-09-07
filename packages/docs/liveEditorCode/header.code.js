@@ -3,7 +3,7 @@
   title="Header title"
   action={{
     'aria-label': 'Magic',
-    title: 'Click me!',
+    text: 'Click me!',
     onClick: () => {
       alert('Success!');
     },

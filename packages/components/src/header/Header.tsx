@@ -3,7 +3,7 @@ import { AriaLabelProperty, Heading, Priority } from '../common';
 
 export type HeaderProps = {
   action?: AriaLabelProperty & {
-    title: string;
+    text: string;
     onClick: () => void;
   };
   /**
@@ -31,7 +31,7 @@ export const Header = ({ action, as: Element = 'span', title }: HeaderProps) => 
           priority={Priority.TERTIARY}
           onClick={action.onClick}
         >
-          {action.title}
+          {action.text}
         </Button>
       )}
     </div>
