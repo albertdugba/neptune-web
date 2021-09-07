@@ -1,8 +1,8 @@
-import { ReactNode } from 'react';
+import { PropsWithChildren } from 'react';
 
-type SectionProps = {
-  children?: ReactNode;
-};
+import { CommonProps } from '../common';
+
+type SectionProps = PropsWithChildren<CommonProps>;
 
 /**
  *

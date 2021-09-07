@@ -7,7 +7,9 @@ module.exports = {
   ext: 'tsx',
   createDir: true,
   name: (name) => capitalizeFirstLetter(name),
-  template: (name) => `type ${capitalizeFirstLetter(name)}Props = {};
+  template: (name) => `import { CommonProps } from '../common';
+
+type ${capitalizeFirstLetter(name)}Props = CommonProps & {};
 
 /**
  * ${capitalizeFirstLetter(name)} docs.

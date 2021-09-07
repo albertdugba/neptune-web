@@ -1,7 +1,7 @@
 import Button from '../button';
-import { AriaLabelProperty, Heading, Priority } from '../common';
+import { AriaLabelProperty, CommonProps, Heading, Priority } from '../common';
 
-export type HeaderProps = {
+export type HeaderProps = CommonProps & {
   action?: AriaLabelProperty & {
     text: string;
     onClick: () => void;
