@@ -92,12 +92,7 @@ export const WithCards = () => {
         isExpanded={isCard1Expanded}
         onClick={() => setIsCard1Expanded(!isCard1Expanded)}
       >
-        <div>
-          Hello there!{' '}
-          <span role="img" aria-label="smiling face with squinting eyes">
-            😊
-          </span>
-        </div>
+        <div>Hello there!</div>
       </Card>
       {/* @ts-expect-error TODO: remove once Card is migrated to TypeScript */}
       <Card
@@ -107,12 +102,7 @@ export const WithCards = () => {
         isExpanded={isCard2Expanded}
         onClick={() => setIsCard2Expanded(!isCard2Expanded)}
       >
-        <div>
-          Hello there!{' '}
-          <span role="img" aria-label="smiling face with squinting eyes">
-            😊
-          </span>
-        </div>
+        <div>Hello there!</div>
       </Card>
     </Section>
   );

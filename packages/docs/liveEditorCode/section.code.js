@@ -50,12 +50,7 @@
           isExpanded={isCard1Expanded}
           onClick={() => setIsCard1Expanded(!isCard1Expanded)}
         >
-          <div>
-            Hello there!{' '}
-            <span role="img" aria-label="smiling face with squinting eyes">
-              😊
-            </span>
-          </div>
+          <div>Hello there!</div>
         </Card>
         <Card
           title="What's in the box?!"
@@ -64,12 +59,7 @@
           isExpanded={isCard2Expanded}
           onClick={() => setIsCard2Expanded(!isCard2Expanded)}
         >
-          <div>
-            Hello there!{' '}
-            <span role="img" aria-label="smiling face with squinting eyes">
-              😊
-            </span>
-          </div>
+          <div>Hello there!</div>
         </Card>
       </Section>
     </>
