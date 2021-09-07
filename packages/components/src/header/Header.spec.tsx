@@ -46,6 +46,23 @@ describe('Header', () => {
     expect(onHeaderActionClick).toHaveBeenCalledTimes(1);
   });
 
+  it('renders header action as a link when href is provided', () => {
+    render(
+      <Header
+        title="Header title"
+        action={{
+          'aria-label': 'Click me!',
+          text: 'I am a link',
+          href: 'https://wise.com',
+        }}
+      />,
+    );
+
+    const link = screen.getByRole('link', { name: 'Click me!' });
+
+    expect(link).toHaveAttribute('href', 'https://wise.com');
+  });
+
   it('can render header with specific heading tag', () => {
     render(<Header as="h3" title="Header title" />);
 

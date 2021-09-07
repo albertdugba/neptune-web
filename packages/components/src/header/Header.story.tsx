@@ -21,3 +21,16 @@ export const WithAction = () => {
     />
   );
 };
+
+export const WithActionAsLink = () => {
+  return (
+    <Header
+      title="Header title"
+      action={{
+        text: 'This is a link',
+        href: 'https://wise.com',
+        target: '_blank',
+      }}
+    />
+  );
+};

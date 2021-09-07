@@ -1,11 +1,23 @@
+import { Link } from '..';
 import Button from '../button';
-import { AriaLabelProperty, CommonProps, Heading, Priority } from '../common';
+import { AriaLabelProperty, CommonProps, Heading, LinkProps, Priority } from '../common';
+
+type ActionProps = AriaLabelProperty & {
+  text: string;
+};
+
+type ButtonActionProps = ActionProps & {
+  onClick: (event: Event) => void;
+};
+
+type LinkActionProps = ActionProps & LinkProps;
 
 export type HeaderProps = CommonProps & {
-  action?: AriaLabelProperty & {
-    text: string;
-    onClick: () => void;
-  };
+  /**
+   * When the `href` property is provided to the `action`, we will render a `Link` instead of a `Button`.
+   *
+   */
+  action?: ButtonActionProps | LinkActionProps;
   /**
    * Override the heading element rendered for the title, useful to specify the semantics of your header.
    *
@@ -13,6 +25,27 @@ export type HeaderProps = CommonProps & {
    */
   as?: Heading | 'span';
   title: string;
+};
+
+const HeaderAction = ({ action }: { action: ButtonActionProps | LinkActionProps }) => {
+  const props = {
+    'aria-label': action['aria-label'],
+    className: 'np-header__action',
+  };
+
+  if ('href' in action) {
+    return (
+      <Link href={action.href} target={action.target} {...props}>
+        {action.text}
+      </Link>
+    );
+  }
+
+  return (
+    <Button priority={Priority.TERTIARY} onClick={action.onClick} {...props}>
+      {action.text}
+    </Button>
+  );
 };
 
 /**
@@ -24,16 +57,7 @@ export const Header = ({ action, as: Element = 'span', title }: HeaderProps) => 
   return (
     <div className="np-header">
       <Element className="h5 np-header__title">{title}</Element>
-      {action && (
-        <Button
-          aria-label={action['aria-label']}
-          className="np-header__button"
-          priority={Priority.TERTIARY}
-          onClick={action.onClick}
-        >
-          {action.text}
-        </Button>
-      )}
+      {action && <HeaderAction action={action} />}
     </div>
   );
 };
