@@ -32,7 +32,7 @@
   }
 
   .media-body {
-    color: @color-base-grey-dark;
+    color: var(--color-content-secondary);
     font-weight: @font-weight-base;
     font-size: @font-size-small; // 14px
     line-height: calc(20 / 14); // 20px
@@ -54,15 +54,11 @@
   &:not(.disabled):hover {
     @media (--screen-xs) {
       background-color: var(--color-background-neutral);
-
-      .circle-inverse {
-        background-color: var(--color-background-elevated);
-      }
     }
 
     .tw-checkbox-button,
     .tw-radio-button {
-      border-color: var(--color-border-focus);
+      border-color: var(--color-interactive-accent);
     }
   }
 

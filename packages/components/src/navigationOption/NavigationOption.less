@@ -25,30 +25,7 @@
   }
 
   & .media-body {
-    color: @color-base-grey-dark;
+    color: var(--color-content-secondary);
     font-weight: @font-weight-base;
-  }
-}
-
-.tw-navigation-option__chevron {
-  padding: 0;
-  border: none;
-  outline: none;
-  background: none;
-
-  &:hover,
-  &:focus {
-    color: var(--color-text-link-hover);
-  }
-
-  &:active {
-    color: var(--color-text-link-active);
-  }
-
-  &[disabled] {
-    &:hover,
-    &:focus {
-      color: var(--color-text-inactive);
-    }
   }
 }

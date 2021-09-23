@@ -33,7 +33,7 @@
   }
 
   .media {
-    color: var(--color-text-primary);
+    color: var(--color-content-primary);
     flex-wrap: wrap;
   }
 
@@ -53,10 +53,11 @@
     }
   }
 
+  // theming: this should become redundant when we implement theming as we will just change value of CSS custom props
   &.tw-accordion-item--dark {
     .media-body,
     .tw-accordion-item__title {
-      color: var(--color-text-control);
+      color: var(--color-base-white-light);
     }
   }
 }
