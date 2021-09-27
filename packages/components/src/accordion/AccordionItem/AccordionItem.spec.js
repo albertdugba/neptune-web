@@ -1,6 +1,5 @@
 import { Freeze } from '@transferwise/icons';
 
-import { useDirection } from '../../common/hooks';
 import { render, userEvent, screen } from '../../test-utils';
 
 import AccordionItem from './AccordionItem';
@@ -14,10 +13,6 @@ describe('AccordionItem', () => {
     open: false,
     onClick: jest.fn(),
   };
-
-  beforeAll(() => {
-    useDirection.mockImplementation(() => ({ direction: 'ltr', isRTL: false }));
-  });
 
   describe('open / close', () => {
     it('renders an item closed', () => {
@@ -52,13 +47,6 @@ describe('AccordionItem', () => {
       userEvent.click(screen.getByRole('button'));
 
       expect(onClick).toHaveBeenCalledTimes(1);
-    });
-  });
-  describe('Right-To-Left', () => {
-    it('applies correct css classes when isRTL is true', () => {
-      useDirection.mockImplementation(() => ({ direction: 'rtl', isRTL: true }));
-      const { container } = render(<AccordionItem {...props} />);
-      expect(container.querySelector('.media-body')).toHaveClass('text-xs-right');
     });
   });
 });

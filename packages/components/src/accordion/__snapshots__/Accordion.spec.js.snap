@@ -73,7 +73,7 @@ exports[`Accordion open and close opens an item when clicked 1`] = `
     >
       <div
         aria-hidden="false"
-        class="media-body p-b-3 m-l-5 m-r-5"
+        class="media-body m-r-5 p-b-3 m-l-5"
       >
         Lauri Ipsum has been the industry standard dummy text ever since the 1500s.
       </div>
@@ -153,7 +153,7 @@ exports[`Accordion open and close opens an item when clicked 1`] = `
     >
       <div
         aria-hidden="true"
-        class="media-body p-b-3 m-l-5 m-r-5"
+        class="media-body m-r-5 p-b-3 m-l-5"
       >
         Lauri Ipsum is simply dummy text of the printing and typesetting industry.
       </div>
@@ -233,7 +233,7 @@ exports[`Accordion open and close opens an item when clicked 1`] = `
     >
       <div
         aria-hidden="true"
-        class="media-body p-b-3 m-l-5 m-r-5"
+        class="media-body m-r-5 p-b-3 m-l-5"
       >
         Lauri Ipsum has been the industry standard dummy text ever since the 1500s.
       </div>
