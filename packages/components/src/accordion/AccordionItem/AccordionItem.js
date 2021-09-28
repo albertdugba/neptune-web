@@ -30,7 +30,11 @@ const AccordionItem = ({ id, title, content, onClick, open, icon, theme }) => {
             <div className={classNames('hidden-xs hidden-sm media-left p-r-2')}>{iconElement}</div>
           )}
           <div className={classNames('media-body title text-xs-left')}>
-            {isString(title) ? <span className="h5 tw-accordion-item__title">{title}</span> : title}
+            {isString(title) ? (
+              <span className="title-4 tw-accordion-item__title">{title}</span>
+            ) : (
+              title
+            )}
           </div>
           <div className={classNames('d-flex align-items-center media-right')}>
             <Chevron orientation={open ? Position.TOP : Position.BOTTOM} />

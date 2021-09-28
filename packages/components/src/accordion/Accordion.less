@@ -1,5 +1,4 @@
 @import (reference) '@transferwise/neptune-css/src/less/addons/_spacing-utilities.less';
-@import (reference) '@transferwise/neptune-css/src/less/variables/_typography.less';
 
 @media (--screen-sm-max) {
   .tw-accordion-item {
@@ -39,7 +38,7 @@
 
   &.decision .media-body {
     white-space: normal;
-    font-size: @font-size-base;
+    font-size: var(--font-size-16);
   }
 
   .accordion-content {

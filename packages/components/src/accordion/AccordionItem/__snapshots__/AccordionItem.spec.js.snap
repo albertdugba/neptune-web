@@ -17,7 +17,7 @@ exports[`AccordionItem open / close renders an item closed 1`] = `
           class="media-body title text-xs-left"
         >
           <span
-            class="h5 tw-accordion-item__title"
+            class="title-4 tw-accordion-item__title"
           >
             This is title number one
           </span>
@@ -77,7 +77,7 @@ exports[`AccordionItem open / close renders an item open 1`] = `
           class="media-body title text-xs-left"
         >
           <span
-            class="h5 tw-accordion-item__title"
+            class="title-4 tw-accordion-item__title"
           >
             This is title number one
           </span>

@@ -42,7 +42,7 @@ describe('Accordion', () => {
       expect(openItems).toHaveLength(1);
 
       const openItem = container.querySelector(
-        '.tw-accordion-item[aria-expanded="true"] .title .h5',
+        '.tw-accordion-item[aria-expanded="true"] .title .title-4',
       );
       expect(openItem.innerHTML).toBe(items[1].title);
     });
