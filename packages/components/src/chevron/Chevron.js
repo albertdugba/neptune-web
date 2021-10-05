@@ -10,8 +10,6 @@ const CONTAINER_SIZE = {
   [Size.MEDIUM]: 24,
 };
 
-export const testID = 'tw-chevron';
-
 const ExtraSmallChevron = ({ className }) => (
   <span
     className={classNames('tw-icon', 'tw-icon-chevron', className)}
@@ -36,9 +34,6 @@ ExtraSmallChevron.defaultProps = {
 };
 
 const Chevron = ({ orientation, size, disabled, className }) => {
-  const props = {
-    'data-testid': `${testID}-${orientation}`,
-  };
   const classNameValue = classNames(
     'tw-chevron',
     { 'chevron-color': !disabled },
@@ -49,10 +44,10 @@ const Chevron = ({ orientation, size, disabled, className }) => {
   const sizeValue = CONTAINER_SIZE[size];
 
   if (size === Size.EXTRA_SMALL) {
-    return <ExtraSmallChevron className={classNameValue} {...props} />;
+    return <ExtraSmallChevron className={classNameValue} />;
   }
 
-  return <ChevronUp className={classNameValue} size={sizeValue} {...props} />;
+  return <ChevronUp className={classNameValue} size={sizeValue} />;
 };
 
 Chevron.propTypes = {

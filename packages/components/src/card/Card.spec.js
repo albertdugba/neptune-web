@@ -4,6 +4,8 @@ import { render, screen, userEvent } from '../test-utils';
 
 import Card from '.';
 
+jest.mock('../chevron');
+
 describe('Card', () => {
   const defaultProps = {
     title: 'A Card',
@@ -80,8 +82,7 @@ describe('Card', () => {
     it("doesn't render a chevron", () => {
       renderCard();
 
-      expect(screen.queryByTestId(`${chevronTestID}-${Position.TOP}`)).not.toBeInTheDocument();
-      expect(screen.queryByTestId(`${chevronTestID}-${Position.BOTTOM}`)).not.toBeInTheDocument();
+      expect(screen.queryByTestId('mock-chevron')).not.toBeInTheDocument();
     });
   });
 
@@ -97,14 +98,14 @@ describe('Card', () => {
     it('renders a chevron', () => {
       renderCard({ children: 'mock children' });
 
-      expect(screen.getByTestId(`${chevronTestID}-${Position.BOTTOM}`)).toBeInTheDocument();
+      expect(screen.getByTestId('mock-chevron')).toHaveAttribute('orientation', Position.BOTTOM);
     });
 
     describe('when expanded', () => {
       it('flips chevron', () => {
         renderCard({ children: 'mock children', isExpanded: true });
 
-        expect(screen.getByTestId(`${chevronTestID}-${Position.TOP}`)).toBeInTheDocument();
+        expect(screen.getByTestId('mock-chevron')).toHaveAttribute('orientation', Position.TOP);
       });
 
       it('renders children', () => {

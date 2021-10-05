@@ -1,19 +1,10 @@
 import '@testing-library/jest-dom';
 import { Size, Position } from '../common';
-import { render, screen } from '../test-utils';
-
-import { testID } from './Chevron';
+import { render } from '../test-utils';
 
 import Chevron from '.';
 
 describe('Chevron', () => {
-  describe('default props', () => {
-    it('renders with data-testid', () => {
-      render(<Chevron />);
-
-      expect(screen.getByTestId(`${testID}-${Position.BOTTOM}`)).toBeInTheDocument();
-    });
-  });
   describe('test rotation', () => {
     it('top', () => {
       const { container } = render(<Chevron orientation={Position.TOP} />);
