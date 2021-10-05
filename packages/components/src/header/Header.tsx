@@ -1,14 +1,19 @@
 import { Link } from '..';
 import Button from '../button';
-import { AriaLabelProperty, CommonProps, Heading, LinkProps, Priority } from '../common';
+import {
+  AriaLabelProperty,
+  OnClickHandler,
+  CommonProps,
+  Heading,
+  LinkProps,
+  Priority,
+} from '../common';
 
 type ActionProps = AriaLabelProperty & {
   text: string;
 };
 
-type ButtonActionProps = ActionProps & {
-  onClick: (event: Event) => void;
-};
+type ButtonActionProps = ActionProps & OnClickHandler;
 
 type LinkActionProps = ActionProps & LinkProps;
 
