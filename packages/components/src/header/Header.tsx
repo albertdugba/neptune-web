@@ -1,3 +1,5 @@
+import classNames from 'classnames';
+
 import { Link } from '..';
 import Button from '../button';
 import {
@@ -58,9 +60,9 @@ const HeaderAction = ({ action }: { action: ButtonActionProps | LinkActionProps 
  * Neptune Web: https://transferwise.github.io/neptune-web/components/content/Header
  *
  */
-export const Header = ({ action, as: Element = 'span', title }: HeaderProps) => {
+export const Header = ({ action, as: Element = 'span', title, className }: HeaderProps) => {
   return (
-    <div className="np-header">
+    <div className={classNames('np-header', className)}>
       <Element className="h5 np-header__title">{title}</Element>
       {action && <HeaderAction action={action} />}
     </div>
