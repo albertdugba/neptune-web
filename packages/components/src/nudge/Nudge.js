@@ -16,7 +16,12 @@ const Nudge = ({ media, title, link, href, onClick, onDismiss, id, className }) 
           {link}
         </a>
       </div>
-      <div className={classNames({ 'media-right': !isRTL, 'media-left': isRTL })}>
+      <div
+        className={classNames('align-self-start', {
+          'media-right': !isRTL,
+          'media-left': isRTL,
+        })}
+      >
         <button type="button" className="close" aria-label="close" onClick={onDismiss}>
           <CrossIcon />
         </button>
