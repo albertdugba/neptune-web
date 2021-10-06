@@ -9,9 +9,9 @@ const FlowHeader = forwardRef((props, reference) => {
   const isVertical = layout === Layout.VERTICAL;
 
   return (
-    <div ref={reference} className={classNames('np-header', 'd-flex', 'flex-wrap', className)}>
+    <div ref={reference} className={classNames('np-flow-header', 'd-flex', 'flex-wrap', className)}>
       <div
-        className={classNames('align-items-center', 'np-header__left', 'd-flex', {
+        className={classNames('align-items-center', 'np-flow-header__left', 'd-flex', {
           'flex__item--8': isVertical,
         })}
       >
@@ -22,7 +22,7 @@ const FlowHeader = forwardRef((props, reference) => {
         className={classNames(
           'align-items-center',
           'd-flex',
-          'np-header__right',
+          'np-flow-header__right',
           'justify-content-end',
           {
             'flex__item--4 ': isVertical,
