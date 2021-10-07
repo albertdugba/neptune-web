@@ -4,6 +4,7 @@ export const schemaType = {
   READ_ONLY: 'readOnly',
   PERSIST_ASYNC: 'persistAsync',
   VALIDATION_ASYNC: 'validationAsync',
+  IMAGE_UPLOAD: 'imageUpload',
   OBJECT: 'object',
   PROMOTED_ONE_OF: 'promotedOneOf',
   ONE_OF: 'oneOf',
@@ -16,6 +17,9 @@ export const isReadOnlySchema = (schema) => !!schema.readOnly && isBasicSchema(s
 export const isPersistAsyncSchema = (schema) => !!schema.persistAsync;
 
 export const isValidationAsyncSchema = (schema) => !!schema.validationAsync;
+
+export const isImageUploadSchema = (schema) =>
+  schema.type === 'string' && schema.format === 'base64url';
 
 export const isObjectSchema = (schema) => schema.type === 'object';
 
@@ -38,6 +42,9 @@ export const getSchemaType = (schema) => {
   }
   if (isValidationAsyncSchema(schema)) {
     return schemaType.VALIDATION_ASYNC;
+  }
+  if (isImageUploadSchema(schema)) {
+    return schemaType.IMAGE_UPLOAD;
   }
   if (isObjectSchema(schema)) {
     return schemaType.OBJECT;
