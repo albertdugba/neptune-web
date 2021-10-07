@@ -44,9 +44,12 @@ const NavigationOption = ({
       {...sharedProps}
       button={<Chevron orientation={Position.RIGHT} disabled={disabled} className="d-block" />}
       onClick={(event) => {
-        if (!disabled) {
-          onClick(event);
+        if (disabled) {
+          event.preventDefault();
+          return;
         }
+
+        onClick(event);
       }}
     />
   );
