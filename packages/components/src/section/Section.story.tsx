@@ -1,6 +1,7 @@
 import { FastFlag as FastFlagIcon } from '@transferwise/icons';
 import { useState } from 'react';
 
+import { NavigationOptionsList } from '..';
 import Accordion from '../accordion';
 import Card from '../card';
 import Header from '../header';
@@ -40,39 +41,31 @@ export const WithHeader = () => {
 export const withAccordion = () => {
   const items = [
     {
+      id: 'Item 1',
       title: 'If you have a deadline, set up your transfer early',
       content:
         'Most large transfers take around 2–4 working days from start to finish. So set up your transfer early if you have a deadline coming up.',
-      id: 'Item 1',
       icon: <FastFlagIcon size={24} />,
     },
     {
+      id: 'Item 2',
       title: 'Have documents on hand to speed things up',
       content:
         'When you set up your transfer, we might ask for documents that show where your money comes from. Documents you might need (opens in a new tab)',
-      id: 'Item 2',
+      icon: <FastFlagIcon size={24} />,
     },
     {
+      id: 'Item 3',
       title: 'Lorem ipsum',
       content:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed scelerisque velit nec ex rutrum efficitur sit amet at enim. Nam a neque magna. Nullam est urna, dignissim nec erat id, euismod aliquet nulla.',
-      id: 'Item 3',
+      icon: <FastFlagIcon size={24} />,
     },
   ];
   return (
     <Section>
       <Header title="Section with accordion" />
       <Accordion items={items} indexOpen={0} />
-    </Section>
-  );
-};
-
-export const WithNavigationOptions = () => {
-  return (
-    <Section>
-      <Header title="Section with options" />
-      <NavigationOption title="Option 1" onClick={() => alert('Option 1')} />
-      <NavigationOption title="Option 2" onClick={() => alert('Option 2')} />
     </Section>
   );
 };
@@ -104,6 +97,28 @@ export const WithCards = () => {
       >
         <div>Hello there!</div>
       </Card>
+    </Section>
+  );
+};
+
+export const WithNavigationOptions = () => {
+  return (
+    <Section>
+      <Header title="Section with options" />
+      <NavigationOption title="Option 1" onClick={() => alert('Option 1')} />
+      <NavigationOption title="Option 2" onClick={() => alert('Option 2')} />
+    </Section>
+  );
+};
+
+export const WithNavigationOptionsList = () => {
+  return (
+    <Section>
+      <Header title="Section with options" />
+      <NavigationOptionsList>
+        <NavigationOption title="Option 1" onClick={() => alert('Option 1')} />
+        <NavigationOption title="Option 2" onClick={() => alert('Option 2')} />
+      </NavigationOptionsList>
     </Section>
   );
 };

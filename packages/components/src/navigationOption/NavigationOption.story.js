@@ -9,8 +9,8 @@ export default {
   title: 'NavigationOption',
 };
 
-export const Basic = () => {
-  const href = text('href', 'http://www.wise.com');
+const Template = (props) => {
+  const href = text('href');
   const title = text('title', 'Navigation option');
   const content = text('content', 'Button and icon are vertically centered.');
   const complex = boolean('complex', false);
@@ -33,35 +33,22 @@ export const Basic = () => {
       showMediaCircle={showMediaCircle}
       className={className}
       onClick={action('clicked')}
+      {...props}
     />
   );
 };
 
-export const illustration = () => {
-  const href = text('href', 'http://www.wise.com');
-  const title = text('title', 'Navigation option');
-  const content = text('content', 'Button and icon are vertically centered.');
-  const complex = boolean('complex', false);
-  const showMediaAtAllSizes = boolean('showMediaAtAllSizes', true);
-  const showMediaCircle = boolean('showMediaCircle', false);
-  const className = text('className');
+export const Basic = () => <Template />;
 
-  return (
-    <NavigationOption
-      complex={complex}
-      id="navigation-option"
-      name="navigation-option"
-      href={href}
-      title={title}
-      content={content}
-      className={className}
-      media={<ExampleIllustration />}
-      showMediaAtAllSizes={showMediaAtAllSizes}
-      showMediaCircle={showMediaCircle}
-      onClick={action('clicked')}
-    />
-  );
-};
+export const Multiple = () => (
+  <>
+    <Template />
+    <Template />
+    <Template />
+  </>
+);
+
+export const Illustration = () => <Template media={<ExampleIllustration />} />;
 
 const ExampleIllustration = () => (
   <svg style={{ width: '48px' }} viewBox="0 0 46 76">

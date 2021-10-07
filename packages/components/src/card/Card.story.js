@@ -34,6 +34,12 @@ export const Basic = () => {
   return <Template isExpanded={false} />;
 };
 
-export const Expanded = () => {
-  return <Template isExpanded />;
+export const Multiple = () => {
+  return (
+    <>
+      <Template isExpanded />
+      <Template isExpanded={false} />
+      <Template isExpanded={false} />
+    </>
+  );
 };
