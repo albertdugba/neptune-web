@@ -67,10 +67,10 @@ describe('Navigation option', () => {
   });
 
   it('should pass correct class names to Option', () => {
-    expect(option().props().className).toBe('tw-navigation-option');
+    expect(option().props().className).toBe('np-navigation-option');
     component.setProps({ className: 'test-class-name' });
 
-    expect(option().props().className).toBe('tw-navigation-option test-class-name');
+    expect(option().props().className).toBe('np-navigation-option test-class-name');
   });
 
   const option = () => component.find(Option);

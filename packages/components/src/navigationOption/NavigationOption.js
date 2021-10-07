@@ -32,7 +32,7 @@ const NavigationOption = ({
     disabled,
     showMediaAtAllSizes,
     showMediaCircle,
-    className: classNames('tw-navigation-option', className),
+    className: classNames('np-navigation-option', className),
   };
 
   if (href) {
