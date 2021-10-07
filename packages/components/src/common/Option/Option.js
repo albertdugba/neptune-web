@@ -52,7 +52,7 @@ const Option = ({
       )}
       <div className="media-body">
         <div className="h5">{title}</div>
-        {content && <div className="np_card__content">{content}</div>}
+        {content}
       </div>
       <div className="media-right">{button}</div>
     </div>
