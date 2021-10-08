@@ -52,7 +52,9 @@ describe('Navigation option', () => {
     component.setProps({ onClick, disabled: true });
 
     expect(onClick).not.toHaveBeenCalled();
-    option().simulate('click');
+    option().simulate('click', {
+      preventDefault: () => {},
+    });
     expect(onClick).not.toHaveBeenCalled();
   });
 

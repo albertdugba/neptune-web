@@ -17,12 +17,8 @@
     border: none;
   }
 
-  // Re-apply borders for options inside a NavigationOptionsList component
-  .np-navigation-options-list__item:not(:last-child) .media {
-    border-bottom: 1px solid var(--color-border-neutral);
-  }
-
-  // Re-apply borders for options inside an Accordion component
+  // Re-apply borders for options inside an Accordion or NavigationOptionsList component
+  .np-navigation-options-list__item:not(:last-child) .media,
   .np-accordion-item:not(:last-child) .media {
     border-bottom: 1px solid var(--color-border-neutral);
   }
