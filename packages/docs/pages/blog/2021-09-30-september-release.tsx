@@ -37,7 +37,7 @@ export default function PageContent(): ReactElement {
       <h2 className="m-t-3 m-b-1">New Typography</h2>
       <p>
         Neptune has common{' '}
-        <a href="https://transferwise.github.io/neptune/design/typography/">typography styles</a>{' '}
+        <a href="https://neptune.wise.com/design/typography/">typography styles</a>{' '}
         which are consistent cross platforms.
       </p>
       <p>This july release extends all these new styles on Neptune-css.</p>
