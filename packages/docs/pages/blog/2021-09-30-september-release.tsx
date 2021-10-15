@@ -1,10 +1,12 @@
+/* eslint-disable react/jsx-max-depth */
 /* eslint-disable react/function-component-definition */
 /* eslint-disable react/jsx-curly-brace-presence */
-/* eslint-disable prettier/prettier */
+// /* eslint-disable prettier/prettier */
 // import { Alert, Link, Sentiment } from '@transferwise/components';
 import { ReactElement } from 'react';
 
-// import { DocumentLink } from '../../utils/pageUtils';
+import Heading from '../../components/Heading';
+import { DocumentLink } from '../../utils/pageUtils';
 import { Meta } from '../../utils/sections';
 
 export const meta: Meta = {
@@ -28,341 +30,165 @@ export const meta: Meta = {
       githubUsername: 'dozortsev',
     },
   ],
-  tags: ['Updated Typography', 'New and Accessible Colors', 'Support for RTL mode'],
+  tags: ['Updated Typography', 'Accessible Colors', 'Support for RTL mode'],
 };
 
 export default function PageContent(): ReactElement {
   return (
     <>
-      <h2 className="m-t-3 m-b-1">New Typography</h2>
+      <Heading as="h2" className="m-t-3 m-b-1">
+        Updated Typography
+      </Heading>
       <p>
-        Neptune has common{' '}
-        <a href="https://neptune.wise.com/design/typography/">typography styles</a>{' '}
-        which are consistent cross platforms.
+        Neptune Design System made cross platform alignment and improved consistency for typography
+        styles. Learn more about that <a href="https://neptune.wise.com/design/typography/">here</a>
+        .
       </p>
-      <p>This july release extends all these new styles on Neptune-css.</p>
-      <p>Updated:</p>
-      <ul>
-        <li>Font size</li>
-        <li>Font weight</li>
-        <li>Line height</li>
-        <li>Emphasis styles</li>
-      </ul>
-      <h3 className="m-b-1">What{"'"}s new: Typography utility classes.</h3>
+      <p>
+        We updated styles of components and Neptune CSS: font size, font weight, line height and
+        emphasis styles.
+      </p>
+      <p>We also adding new CSS utility classes that have cross platfrom naming.</p>
+      <Heading as="h3" className="m-b-1">
+        New Headings Utility Classes.
+      </Heading>
       <p className="m-b-1">
-        Use <code>.title-1</code> , <code>.title-2</code> ... font styling classes for the headings.
+        Use <code>.title-1</code>, <code>.title-2</code> ... font styling classes for the headings
+        (see <DocumentLink href="styles/core/Typography#headings">full documentation</DocumentLink>
+        ).
       </p>
       <table className="table table-bordered">
         <thead>
           <tr>
-            <th>Style</th>
-            <th>Properties</th>
+            <th>Usage Example</th>
+            <th>Demo</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>
-              <h1>Title 1. Money without borders</h1>
-              <code>.title-1</code>
+              <pre>{'<h1 class="title-1">Money without borders</h1>'}</pre>
+              <pre>{'<span class="title-1">Money without borders</span>'}</pre>
+              <pre>{'<h2 class="title-2">Money without borders</h2>'}</pre>
+              <pre>{'<span class="title-2">Money without borders</span>'}</pre>
+              <pre>{'<h3 class="title-3">Money without borders</h3>'}</pre>
+              <pre>{'<span class="title-3">Money without borders</span>'}</pre>
             </td>
             <td>
-              <code>bold 32px</code>
-              <br />
-              <code>line-height 1.2</code>
-              <br />
-              <code>margin-bottom 8px</code>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <h2>Title 2. Money without borders</h2>
-              <code>.title-2</code>
-            </td>
-            <td>
-              <code>bold 26px</code>
-              <br />
-              <code>line-height 1.2</code>
-              <br />
-              <code>margin-bottom 4px</code>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <h3>Title 3. Money without borders</h3>
-              <code>.title-3</code>
-            </td>
-            <td>
-              <code>semi-bold 20px</code>
-              <br />
-              <code>line-height 1.2</code>
-              <br />
-              <code>margin-bottom 2px</code>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <h4>Title 4. Money without borders</h4>
-              <code>.title-4</code>
-            </td>
-            <td>
-              <code>semi-bold 16px</code>
-              <br />
-              <code>line-height 1.2</code>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <h5>Title 5. Money without borders</h5>
-              <code>.title-5</code>
-            </td>
-            <td>
-              <code>semi-bold 14px</code>
-              <br />
-              <code>line-height 1.2</code>
+              <h1 className="title-1">Money without borders</h1>
+              <span className="title-1">Money without borders</span>
+              <h1 className="title-2">Money without borders</h1>
+              <span className="title-2">Money without borders</span>
+              <h1 className="title-3">Money without borders</h1>
+              <span className="title-3">Money without borders</span>
             </td>
           </tr>
         </tbody>
       </table>
-      <h4 className="title-4 m-b-1">Body utility classes</h4>
+      <Heading as="h3" className="title-4 m-b-1">
+        New Body Utility classes
+      </Heading>
+      <code>.body-*</code>, <code>.control-*</code>, <code>.value</code>, <code>.label</code>, see{' '}
+      <DocumentLink href="styles/core/Typography#body-copy">full documentation</DocumentLink>.
       <table className="table table-bordered">
         <thead>
           <tr>
-            <th>Style</th>
-            <th>Properties</th>
-            <th>How to use</th>
+            <th>Usage example</th>
+            <th>Demo</th>
           </tr>
         </thead>
         <tbody>
           <tr>
+            <td>
+              <pre>
+                {`<p class="body-1">Body 1<br />
+  Were on a mission to bring transparency to finance.
+</p>`}
+              </pre>
+            </td>
             <td>
               <p className="body-1">
-                Body 1
-                <br />
-                We’re on a mission to bring transparency to finance, for people without borders. We
-                charge as little as possible, and we always show you upfront. No hidden fees. No bad
-                exchange rates. No surprises.
+                Body 1<br />
+                Were on a mission to bring transparency to finance.
               </p>
-              <code>.body-1</code>
             </td>
-            <td>
-              <code className="text-xs-nowrap">regular 16px</code>
-              <br />
-              <code className="text-xs-nowrap">line-height 1.5</code>
-            </td>
-            <td>Our default style for content in paragraphs and longer form copy.</td>
           </tr>
           <tr>
+            <td>
+              <pre>
+                {`<p class="body-2">Body 1<br />
+  Were on a mission to bring transparency to finance.
+</p>`}
+              </pre>
+            </td>
             <td>
               <p className="body-2">
-                Body 2
-                <br />
-                We’re on a mission to bring transparency to finance, for people without borders. We
-                charge as little as possible, and we always show you upfront. No hidden fees. No bad
-                exchange rates. No surprises.
+                Body 1<br />
+                Were on a mission to bring transparency to finance.
               </p>
-              <code>.body-2</code>
             </td>
-            <td>
-              <code className="text-xs-nowrap">regular 14px</code>
-              <br />
-              <code className="text-xs-nowrap">line-height 1.5</code>
-            </td>
-            <td>Use for secondary information related to another piece of copy set in Body 1.</td>
           </tr>
           <tr>
+            <td>
+              <pre>
+                {`<p class="body-3">Body 1<br />
+  Were on a mission to bring transparency to finance.
+</p>`}
+              </pre>
+            </td>
             <td>
               <p className="body-3">
-                Body 3
-                <br />
-                We’re on a mission to bring transparency to finance, for people without borders. We
-                charge as little as possible, and we always show you upfront. No hidden fees. No bad
-                exchange rates. No surprises.
+                Body 1<br />
+                Were on a mission to bring transparency to finance.
               </p>
-              <code>.body-3</code>
             </td>
-            <td>
-              <code className="text-xs-nowrap">regular 12px</code>
-              <br />
-              <code className="text-xs-nowrap">line-height 1.5</code>
-            </td>
-            <td>Should be avoided. Use only when the information is not critical to the user.</td>
           </tr>
           <tr>
+            <td>
+              <pre>
+                {`<p class="control-1">Control 1</p>
+<span class="control-1">Control 1</span>
+<p class="control-2">Control 2</p>
+<span class="control-2">Control 2</span>
+<p class="control-3">Control 3</p>
+<span class="control-3">Control 3</span>`}
+              </pre>
+            </td>
             <td>
               <p className="control-1">Control 1</p>
-              <code>.control-1</code>
-            </td>
-            <td>
-              <code className="text-xs-nowrap">semibold 16px</code>
-              <br />
-              <code className="text-xs-nowrap">line-height 1.2</code>
-            </td>
-            <td rowSpan={2}>
-              Use inside interactive components, such as buttons, dropdowns, tabs.
-            </td>
-          </tr>
-          <tr>
-            <td>
+              <span className="control-1">Control 1</span>
               <p className="control-2">Control 2</p>
-              <code>.control-2</code>
-            </td>
-            <td>
-              <code className="text-xs-nowrap">semibold 14px</code>
-              <br />
-              <code className="text-xs-nowrap">line-height 1.2</code>
+              <span className="control-2">Control 2</span>
+              <p className="control-3">Control 3</p>
+              <span className="control-3">Control 3</span>
             </td>
           </tr>
           <tr>
+            <td>
+              <pre>{'<p class="label">Label</p>'}</pre>
+            </td>
             <td>
               <p className="label">Label</p>
-              <code>.label</code>
             </td>
-            <td>
-              <code className="text-xs-nowrap">regular 14px</code>
-              <br />
-              <code className="text-xs-nowrap">line-height 1.5</code>
-            </td>
-            <td rowSpan={2}>Use for labelling inputs and values.</td>
           </tr>
           <tr>
+            <td>
+              <pre>{'<p class="value">Value</p>'}</pre>
+            </td>
             <td>
               <p className="value">Value</p>
-              <code>.value</code>
-            </td>
-            <td>
-              <code className="text-xs-nowrap">regular 16px</code>
-              <br />
-              <code className="text-xs-nowrap">line-height 1.5</code>
             </td>
           </tr>
         </tbody>
       </table>
-      <h3 className="m-b-1">Emphasis styles</h3>
-      <table className="table table-bordered">
-        <thead>
-          <tr>
-            <th>Font weights</th>
-            <th>Properties</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <p>
-                I am a <span className="font-weight-regular">regular</span> text
-              </p>
-              <code>.font-weight-regular</code>
-            </td>
-            <td>font-weight: 500</td>
-          </tr>
-          <tr>
-            <td>
-              <p>
-                I am a <span className="font-weight-semi-bold">semi bold</span> text
-              </p>
-              <code>.font-weight-semi-bold</code>
-            </td>
-            <td>font-weight: 600</td>
-          </tr>
-          <tr>
-            <td>
-              <p>
-                I am a <span className="font-weight-bold">bold</span> text
-              </p>
-              <code>.font-weight-bold</code>
-            </td>
-            <td>font-weight: 800</td>
-          </tr>
-        </tbody>
-      </table>
-      <table className="table table-bordered">
-        <thead>
-          <tr>
-            <th>Emphasis colour</th>
-            <th>Default</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <code>.text-primary</code>
-            </td>
-            <td>
-              <span className="text-primary">Primary</span>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <code>.text-positive</code>
-            </td>
-            <td>
-              <span className="text-positive">Positive</span>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <code>.text-negative</code>
-            </td>
-            <td>
-              <span className="text-negative">Negative</span>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <code>.text-warning</code>
-            </td>
-            <td>
-              <span className="text-warning">Warning</span>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <code>.text-info</code>
-            </td>
-            <td>
-              <span className="text-info">Info</span>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <h3 className="m-b-1">Points to have into account:</h3>
-      <ul>
-        <li>
-          Headings{"'"} font size is going to be 2px smaller, 10px for <code>h1</code>.
-        </li>
-        <li>Headings are going to keep the same size for mobile and desktop.</li>
-        <li>
-          To keep former <code>h1</code> size, specially in marketing pages, you can use
-          `.display-5` utility class.
-        </li>
-        <li>
-          Headings{"'"} line height has changed and you may notice a lack of spacing between the
-          heading and the next element. If this is the case you can use spacing utility classes (
-          <code>m-b-1</code>,...) to sort it out.
-        </li>
-      </ul>
-      <h3 className="m-b-1">Best practices</h3>
-      <ul>
-        <li>
-          Use new typography styles and replace existing ones. The old typography styles are going
-          to be moved to the deprecation list, which are going to be maintained by now, but
-          eventually can be removed.
-        </li>
-        <li>
-          Avoid using headings without a class. Use,{' '}
-          <code>
-            h2 className={'"'}title-2{'"'}
-          </code>{' '}
-          instead. This avoids potential specificity issues and it{"'"}s a better practice for
-          posible use of CSS modules in future.
-        </li>
-      </ul>
-      <h3 className="m-b-1">New typography tokens</h3>
+      <Heading as="h3" className="m-b-1">
+        New Typography Tokens
+      </Heading>
       <p>
-        Use/update new tokens. Example:{' '}
-        <code>.foo &#123;font-size: var(--font-size-16);&#125;</code>
+        Please use them instead of old and deprecated ones, they available as CSS custom properties
+        as LESS variables, see{' '}
+        <DocumentLink href="styles/tokens/Typography">full documentation</DocumentLink>.
       </p>
-
       <ul>
         <li>
           <code>--font-size-12: 0.75rem;</code>
@@ -401,7 +227,45 @@ export default function PageContent(): ReactElement {
           <code>--font-weight-bold: 800;</code>
         </li>
       </ul>
-      <h3 className="m-b-1">Deprecation list</h3>
+      <Heading as="h3" className="m-b-1">
+        Points to have into account:
+      </Heading>
+      <ul>
+        <li>
+          Headings{"'"} font size is going to be 2px smaller, 10px for <code>h1</code>.
+        </li>
+        <li>Headings are going to keep the same size for mobile and desktop.</li>
+        <li>
+          To keep former <code>h1</code> size, specially in marketing pages, you can use
+          `.display-5` utility class.
+        </li>
+        <li>
+          Headings{"'"} line height has changed and you may notice a lack of spacing between the
+          heading and the next element. If this is the case you can use spacing utility classes (
+          <code>m-b-1</code>,...) to sort it out.
+        </li>
+      </ul>
+      <Heading as="h3" className="m-b-1">
+        Best practices
+      </Heading>
+      <ul>
+        <li>
+          Use new typography styles and replace existing ones. The old typography styles are going
+          to be moved to the deprecation list, which are going to be maintained by now, but
+          eventually can be removed.
+        </li>
+        <li>
+          Avoid using headings without a class. Use,{' '}
+          <code>
+            h2 className={'"'}title-2{'"'}
+          </code>{' '}
+          instead. This avoids potential specificity issues and it{"'"}s a better practice for
+          posible use of CSS modules in future.
+        </li>
+      </ul>
+      <Heading as="h3" className="m-b-1">
+        Deprecation list
+      </Heading>
       <p>
         Neptune recommends to use new typography utility classes listed in above tables to format
         typography, because some of the typography classes are going to be deprecated:
@@ -430,8 +294,12 @@ export default function PageContent(): ReactElement {
           <code>.text-success</code>
         </li>
       </ul>
-      <h2 className="m-t-3 m-b-1">New and Accessible Colors</h2>
-      <h2 className="m-t-3 m-b-1">Support for RTL mode</h2>
+      <Heading as="h2" className="m-t-3 m-b-1">
+        New and Accessible Colors
+      </Heading>
+      <Heading as="h2" className="m-t-3 m-b-1">
+        Support for RTL mode
+      </Heading>
     </>
   );
 }

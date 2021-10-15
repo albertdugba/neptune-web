@@ -86,7 +86,7 @@ const sections: MainSection[] = [
       {
         title: 'Tokens',
         directory: 'styles/tokens',
-        fileOrder: ['Colors', 'Sizes', 'Breakpoints'],
+        fileOrder: ['Colors', 'Typography', 'Sizes', 'Breakpoints'],
       },
       {
         title: 'Extras',
