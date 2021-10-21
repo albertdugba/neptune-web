@@ -52,12 +52,11 @@
   }
 
   &:not(.disabled):hover {
-    @media (--screen-xs) {
-      background-color: var(--color-background-neutral);
+    // TODO: Replace this color on rebrand. Custom hover color added to distinct decision hover color from product page backgrounds.
+    background-color: #86a7bd12;
 
-      .circle-inverse {
-        background-color: var(--color-background-elevated);
-      }
+    .circle-inverse {
+      background-color: var(--color-background-elevated);
     }
 
     .tw-checkbox-button,
