@@ -26,13 +26,12 @@ const Card = forwardRef((props, reference) => {
     <Element
       ref={reference}
       className={classNames('np-card', className, {
-        'np-card--open': isOpen,
+        'np-card--expanded': isOpen,
         'np-card--inactive': !children,
       })}
       id={id}
       data-testid={rest['data-testid']}
     >
-      <div className={classNames('np-card__panel', { 'np-card__panel--expanded': isOpen })} />
       <Option
         as={children ? 'button' : 'div'}
         className={classNames('np-card__button')}
