@@ -1,4 +1,6 @@
 () => {
+  const [expandedCardIndex, setExpandedCardIndex] = React.useState(null);
+
   const items = [
     {
       title: 'If you have a deadline, set up your transfer early',
@@ -22,8 +24,14 @@
       icon: <FastFlagIcon size={24} />,
     },
   ];
-  const [isCard1Expanded, setIsCard1Expanded] = React.useState(false);
-  const [isCard2Expanded, setIsCard2Expanded] = React.useState(false);
+
+  const handleOnCardClick = (index) => {
+    if (expandedCardIndex === index) {
+      return setExpandedCardIndex(null);
+    }
+
+    setExpandedCardIndex(index);
+  };
 
   return (
     <>
@@ -47,8 +55,8 @@
           title="What's in the box?!"
           details="Click me to reveal."
           icon={<FastFlagIcon size={24} />}
-          isExpanded={isCard1Expanded}
-          onClick={() => setIsCard1Expanded(!isCard1Expanded)}
+          isExpanded={expandedCardIndex === 0}
+          onClick={() => handleOnCardClick(0)}
         >
           <div>Hello there!</div>
         </Card>
@@ -56,8 +64,8 @@
           title="What's in the box?!"
           details="Click me to reveal."
           icon={<FastFlagIcon size={24} />}
-          isExpanded={isCard2Expanded}
-          onClick={() => setIsCard2Expanded(!isCard2Expanded)}
+          isExpanded={expandedCardIndex === 1}
+          onClick={() => handleOnCardClick(1)}
         >
           <div>Hello there!</div>
         </Card>

@@ -14,16 +14,15 @@ const Template = (props) => {
   const title = text('title', 'A card');
   const details = text('details', 'Some details about this card');
   const content = text('content', 'Lorem ipsum dolor sit amet.');
-  const [isExpanded, setIsExpanded] = useState(props.isExpanded);
 
   return (
     <Card
       as={elementType}
       title={title}
       details={details}
-      isExpanded={isExpanded}
+      isExpanded={props.isExpanded}
       icon={<FastFlagIcon />}
-      onClick={setIsExpanded}
+      onClick={props.onClick}
     >
       {content}
     </Card>
@@ -31,15 +30,26 @@ const Template = (props) => {
 };
 
 export const Basic = () => {
-  return <Template isExpanded={false} />;
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return <Template isExpanded={isExpanded} onClick={setIsExpanded} />;
 };
 
 export const Multiple = () => {
+  const [expandedCardIndex, setExpandedCardIndex] = useState(0);
+
+  const handleOnCardClick = (index) => {
+    if (expandedCardIndex === index) {
+      return setExpandedCardIndex(null);
+    }
+    setExpandedCardIndex(index);
+  };
+
   return (
     <>
-      <Template isExpanded />
-      <Template isExpanded={false} />
-      <Template isExpanded={false} />
+      <Template isExpanded={expandedCardIndex === 0} onClick={() => handleOnCardClick(0)} />
+      <Template isExpanded={expandedCardIndex === 1} onClick={() => handleOnCardClick(1)} />
+      <Template isExpanded={expandedCardIndex === 2} onClick={() => handleOnCardClick(2)} />
     </>
   );
 };
