@@ -63,6 +63,12 @@ describe('Header', () => {
     expect(link).toHaveAttribute('href', 'https://wise.com');
   });
 
+  it('renders header with h5 heading tag by default', () => {
+    render(<Header title="Header title" />);
+
+    expect(screen.getByRole('heading', { name: 'Header title', level: 5 })).toBeInTheDocument();
+  });
+
   it('can render header with specific heading tag', () => {
     render(<Header as="h3" title="Header title" />);
 

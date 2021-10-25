@@ -28,9 +28,9 @@ export type HeaderProps = CommonProps & {
   /**
    * Override the heading element rendered for the title, useful to specify the semantics of your header.
    *
-   * @default "span"
+   * @default "h5"
    */
-  as?: Heading | 'span';
+  as?: Heading;
   title: string;
 };
 
@@ -60,10 +60,10 @@ const HeaderAction = ({ action }: { action: ButtonActionProps | LinkActionProps 
  * Neptune Web: https://transferwise.github.io/neptune-web/components/content/Header
  *
  */
-export const Header = ({ action, as: Element = 'span', title, className }: HeaderProps) => {
+export const Header = ({ action, as: Element = 'h5', title, className }: HeaderProps) => {
   return (
     <div className={classNames('np-header', className)}>
-      <Element className="h5 np-header__title">{title}</Element>
+      <Element className="np-header__title h5">{title}</Element>
       {action && <HeaderAction action={action} />}
     </div>
   );

@@ -6,7 +6,7 @@ export default {
 };
 
 export const Basic = () => {
-  return <Header as="h3" title="Header title" />;
+  return <Header title="Header title" />;
 };
 
 export const WithAction = () => {
