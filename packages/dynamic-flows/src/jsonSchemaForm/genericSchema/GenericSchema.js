@@ -3,13 +3,13 @@ import Types from 'prop-types';
 import { getSchemaType, schemaType } from '../../common/schemaTypes/schemaTypes';
 import AllOfSchema from '../allOfSchema';
 import BasicTypeSchema from '../basicTypeSchema';
-import ImageCapture from '../component/imageUpload/cameraCapture/CameraCapture';
 import ObjectSchema from '../objectSchema';
 import OneOfSchema from '../oneOfSchema';
 import PersistAsyncSchema from '../persistAsyncSchema';
 import PromotedOneOfSchema from '../promotedOneOfSchema';
 import ReadOnlySchema from '../readOnlySchema';
 import ValidationAsyncSchema from '../validationAsyncSchema';
+import ImageUpload from '../component/imageUpload';
 
 const GenericSchemaForm = (props) => {
   const { schema } = props;
@@ -24,7 +24,7 @@ const GenericSchemaForm = (props) => {
     case schemaType.VALIDATION_ASYNC:
       return <ValidationAsyncSchema {...props} />;
     case schemaType.IMAGE_UPLOAD:
-      return <ImageCapture {...props} />;
+      return <ImageUpload {...props} />;
     case schemaType.BASIC:
       return <BasicTypeSchema {...props} />;
     case schemaType.OBJECT:

@@ -1,4 +1,4 @@
-#cameraLoader {
+#cameraCaptureLoader {
   position: fixed;
   top: 0;
   left: 0;
@@ -13,7 +13,7 @@
   align-items: center;
 }
 
-#camera {
+#cameraCapture {
   position: fixed;
   top: 0;
   left: 0;
@@ -28,15 +28,15 @@
   }
 
   &.mirrored {
-    #cameraViewfinder,
-    #cameraViewfinderSnapshot {
+    #cameraCaptureVideo,
+    #cameraCaptureSnapshot {
       -webkit-transform: scaleX(-1);
       transform: scaleX(-1);
     }
   }
 }
 
-#cameraViewfinder {
+#cameraCaptureVideo {
   position: fixed;
   top: 0;
   left: 0;
@@ -46,7 +46,7 @@
   //object-fit: contain; // it's usually already the default, but just in case of quirky browsers.
 }
 
-#cameraViewfinderLayers {
+#cameraCaptureLayers {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -60,7 +60,7 @@
   //background-repeat: no-repeat;
 }
 
-#cameraViewfinderSnapshot {
+#cameraCaptureSnapshot {
   position: fixed;
   top: 0;
   left: 0;
@@ -81,14 +81,14 @@
   }
 }
 
-.camera-ctrl-box-small {
+.camera-capture-box-small {
   width: 100%;
   vertical-align: bottom;
   display: flex;
   justify-content: space-around;
 }
 
-//.camera-ctrl-box-big {
+//.camera-capture-box-big {
 //  display: inline-block;
 //  height: 84px;
 //  width: 84px;
@@ -97,17 +97,17 @@
 //  vertical-align: bottom;
 //}
 
-.camera-ctrl-btn-cancel {
+.camera-capture-btn-cancel {
   color: red;
   background-color: #f8f9fa;
 }
 
-.camera-ctrl-btn-confirm {
+.camera-capture-btn-confirm {
   color: green;
   background-color: #f8f9fa;
 }
 
-.camera-ctrl-btn-small {
+.camera-capture-btn-small {
   height: 56px;
   width: 56px;
   display: inline-flex;
@@ -127,7 +127,7 @@
   border-radius: 50%;
 }
 
-.camera-ctrl-btn-big-inner {
+.camera-capture-btn-big-inner {
   display: inline-block;
   height: 60px;
   width: 60px;
@@ -137,7 +137,7 @@
   transition: all 0.15s ease-in-out;
 }
 
-.camera-ctrl-btn-big {
+.camera-capture-btn-big {
   display: inline-block;
   height: 76px;
   width: 76px;
@@ -157,7 +157,7 @@
   &:hover {
     border-color: darken(#f8f9fa, 15%);
 
-    .camera-ctrl-btn-big-inner {
+    .camera-capture-btn-big-inner {
       background-color: darken(#f8f9fa, 15%);
     }
   }
@@ -165,23 +165,23 @@
   &:active {
     border-color: darken(#f8f9fa, 30%);
 
-    .camera-ctrl-btn-big-inner {
+    .camera-capture-btn-big-inner {
       background-color: darken(#f8f9fa, 30%);
     }
   }
 }
 
-[class*='camera-ctrl-bar'] {
+[class*='camera-capture-bar'] {
   z-index: 1034 !important;
 }
 
-.camera-ctrl-bar-top {
+.camera-capture-bar-top {
   padding-left: 0.8em;
   padding-top: 1.5em;
   display: flex;
 }
 
-.camera-ctrl-bar-bottom {
+.camera-capture-bar-bottom {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -203,10 +203,10 @@
   z-index: 1030;
 }
 
-.camera-ctrl-title {
+.camera-capture-title {
   color: white;
 }
 
-.camera-ctrl-icon {
+.camera-capture-icon {
   color: white;
 }

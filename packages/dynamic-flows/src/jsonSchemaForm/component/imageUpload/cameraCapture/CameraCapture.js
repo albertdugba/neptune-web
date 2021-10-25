@@ -328,14 +328,14 @@ const CameraCapture = (props) => {
   };
 
   const onCaptureButtonClick = () => {
-    if (!showPreview) {
-      return returnCapturedImage();
-    }
-
     videoReference.current.pause();
     snapshotReference.current.width = videoReference.current.videoWidth;
     snapshotReference.current.height = videoReference.current.videoHeight;
     snapshotReference.current.getContext('2d').drawImage(videoReference.current, 0, 0);
+
+    if (!showPreview) {
+      return returnCapturedImage();
+    }
 
     setMode(MODE.PREVIEW);
   };
@@ -355,35 +355,33 @@ const CameraCapture = (props) => {
   return (
     <>
       {loading && (
-        <div id="cameraLoader">
+        <div id="cameraCaptureLoader">
           <Loader size={Size.MEDIUM} />
         </div>
       )}
-      <div id="camera" className={`${isVideoMirrored ? 'mirrored' : ''}`}>
-        <video ref={videoReference} id="cameraViewfinder" autoPlay playsInline />
+      <div id="cameraCapture" className={`${isVideoMirrored ? 'mirrored' : ''}`}>
+        <video ref={videoReference} id="cameraCaptureVideo" autoPlay playsInline />
 
-        <canvas ref={layersReference} id="cameraViewfinderLayers" />
+        <canvas ref={layersReference} id="cameraCaptureLayers" />
 
-        <div id="cameraViewfinderSnapshot">
+        <div id="cameraCaptureSnapshot">
           <canvas ref={snapshotReference} hidden={mode !== MODE.PREVIEW} />
         </div>
 
-        <div className="fixed-top camera-ctrl-bar-top">
+        <div className="fixed-top camera-capture-bar-top">
           {onCancel && (
-            <div className="fixed-top camera-ctrl-bar-top">
-              <CircularButton
-                icon={<Cross />}
-                type={ControlType.ACCENT}
-                priority={Priority.PRIMARY}
-                onClick={onCancelButtonClick}
-              />
-            </div>
+            <CircularButton
+              icon={<Cross />}
+              type={ControlType.ACCENT}
+              priority={Priority.PRIMARY}
+              onClick={onCancelButtonClick}
+            />
           )}
         </div>
 
-        <div className="fixed-bottom camera-ctrl-bar-bottom">
+        <div className="fixed-bottom camera-capture-bar-bottom">
           {mode === MODE.PREVIEW && (
-            <span className="camera-ctrl-box-small">
+            <span className="camera-capture-box-small">
               <CircularButton
                 icon={<Cross />}
                 type={ControlType.NEGATIVE}
@@ -400,12 +398,12 @@ const CameraCapture = (props) => {
           )}
           {mode === MODE.CAPTURE && (
             <>
-              <Icon size={24} className="camera-ctrl-icon m-b-1" />
-              <h4 className="camera-ctrl-title m-b-1 p-x-3">{title}</h4>
-              <small className="camera-ctrl-title m-b-2 p-x-3">{instructions}</small>
+              <Icon size={24} className="camera-capture-icon m-b-1" />
+              <h4 className="camera-capture-title m-b-1 p-x-3">{title}</h4>
+              <small className="camera-capture-title m-b-2 p-x-3">{instructions}</small>
               {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
-              <span className="camera-ctrl-btn-big m-b-2" onClick={onCaptureButtonClick}>
-                <span className="camera-ctrl-btn-big-inner" />
+              <span className="camera-capture-btn-big m-b-2" onClick={onCaptureButtonClick}>
+                <span className="camera-capture-btn-big-inner" />
               </span>
             </>
           )}
