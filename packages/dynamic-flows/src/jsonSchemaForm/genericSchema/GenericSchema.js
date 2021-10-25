@@ -3,7 +3,7 @@ import Types from 'prop-types';
 import { getSchemaType, schemaType } from '../../common/schemaTypes/schemaTypes';
 import AllOfSchema from '../allOfSchema';
 import BasicTypeSchema from '../basicTypeSchema';
-import ImageUpload from '../component/imageUpload/ImageUpload';
+import ImageCapture from '../component/imageCapture/ImageCapture';
 import ObjectSchema from '../objectSchema';
 import OneOfSchema from '../oneOfSchema';
 import PersistAsyncSchema from '../persistAsyncSchema';
@@ -23,8 +23,8 @@ const GenericSchemaForm = (props) => {
       return <PersistAsyncSchema {...props} />;
     case schemaType.VALIDATION_ASYNC:
       return <ValidationAsyncSchema {...props} />;
-    case schemaType.IMAGE_UPLOAD:
-      return <ImageUpload {...props} />;
+    case schemaType.IMAGE_CAPTURE:
+      return <ImageCapture {...props} />;
     case schemaType.BASIC:
       return <BasicTypeSchema {...props} />;
     case schemaType.OBJECT:

@@ -2,7 +2,7 @@ import { BottomSheet, NavigationOption, Upload } from '@transferwise/components'
 import Types from 'prop-types';
 import { useEffect, useState } from 'react';
 
-const ImageUpload = (props) => {
+const ImageCapture = (props) => {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -64,7 +64,7 @@ const ImageUpload = (props) => {
   );
 };
 
-ImageUpload.propTypes = {
+ImageCapture.propTypes = {
   schema: Types.shape({
     type: Types.oneOf(['string']),
     format: Types.string,
@@ -94,4 +94,4 @@ ImageUpload.propTypes = {
   disabled: Types.bool,
 };
 
-export default ImageUpload;
+export default ImageCapture;
