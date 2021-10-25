@@ -1,7 +1,8 @@
+import { Globe as GlobeIcon } from '@transferwise/icons';
 import PropTypes from 'prop-types';
 import { cloneElement } from 'react';
 
-const Option = ({ currency, label, note, secondary, icon, classNames, selected }) => {
+const Option = ({ currency, label, note, secondary, icon, classNames, selected, global }) => {
   const style = (classes) =>
     classes.map((className) => classNames[className] || className).join(' ');
   const currencyClassNames = currency
@@ -11,14 +12,17 @@ const Option = ({ currency, label, note, secondary, icon, classNames, selected }
         `${selected ? 'hidden-xs' : ''}`,
       ])}`
     : null;
+  const currencyIcon = global ? (
+    <GlobeIcon size={24} filled data-testid="globe-icon" />
+  ) : (
+    <i className={currencyClassNames} />
+  );
 
   return (
     <span>
-      {currency ? (
-        <i className={currencyClassNames} />
-      ) : (
-        icon && cloneElement(icon, { size: 24, className: `${style(['tw-icon'])}` })
-      )}
+      {currency
+        ? currencyIcon
+        : icon && cloneElement(icon, { size: 24, className: `${style(['tw-icon'])}` })}
       {label}
       {note && <span className="small m-l-1">{note}</span>}
       {secondary && <span className="small text-ellipsis">{secondary}</span>}
@@ -34,6 +38,7 @@ Option.propTypes = {
   icon: PropTypes.node,
   classNames: PropTypes.objectOf(PropTypes.string),
   selected: PropTypes.bool,
+  global: PropTypes.bool,
 };
 
 Option.defaultProps = {
@@ -43,6 +48,7 @@ Option.defaultProps = {
   icon: null,
   classNames: {},
   selected: false,
+  global: false,
 };
 
 export default Option;

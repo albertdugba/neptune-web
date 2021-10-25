@@ -19,6 +19,7 @@ const Currency = PropTypes.shape({
   currency: PropTypes.string,
   note: PropTypes.string,
   searchable: PropTypes.string,
+  global: PropTypes.bool,
 });
 const CUSTOM_ACTION = 'CUSTOM_ACTION';
 const isNumberOrNull = (v) => isNumber(v) || isNull(v);
@@ -298,11 +299,17 @@ function filterOptionsForQuery(options, query) {
 function removeDuplicateValueOptions(options) {
   const result = [];
   const resultValues = [];
+  const resultGlobalValues = [];
 
   options.forEach((option) => {
-    if (option.value && !resultValues.includes(option.value)) {
-      result.push(option);
-      resultValues.push(option.value);
+    if (option.value) {
+      if (option.global && !resultGlobalValues.includes(option.value)) {
+        result.push(option);
+        resultGlobalValues.push(option.value);
+      } else if (!resultValues.includes(option.value)) {
+        result.push(option);
+        resultValues.push(option.value);
+      }
     }
   });
 

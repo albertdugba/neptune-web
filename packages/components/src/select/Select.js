@@ -417,7 +417,10 @@ export default class Select extends Component {
       );
     }
 
-    const isActive = this.props.selected && this.props.selected.value === option.value;
+    const isActive =
+      this.props.selected &&
+      this.props.selected.value === option.value &&
+      this.props.selected.global === option.global;
     const isFocusedWithKeyboard =
       this.state.keyboardFocusedOptionIndex ===
       this.getIndexWithoutHeadersForIndexWithHeaders(index);
@@ -552,6 +555,7 @@ Select.propTypes = {
     currency: PropTypes.string,
     note: PropTypes.node,
     secondary: PropTypes.node,
+    global: PropTypes.bool,
   }),
   /**
    * Search toggle
@@ -574,6 +578,7 @@ Select.propTypes = {
       separator: PropTypes.bool,
       disabled: PropTypes.bool,
       searchStrings: PropTypes.arrayOf(PropTypes.string),
+      global: PropTypes.bool,
     }),
   ).isRequired,
   /**
