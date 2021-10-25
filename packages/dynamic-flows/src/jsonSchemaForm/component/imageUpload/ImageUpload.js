@@ -1,65 +1,40 @@
-import { BottomSheet, NavigationOption, Upload } from '@transferwise/components';
 import Types from 'prop-types';
-import { useEffect, useState } from 'react';
+import CameraCapture from './cameraCapture';
+
+function blobToBase64(blob) {
+  return new Promise((resolve, _) => {
+    const reader = new FileReader();
+    reader.onloadend = () => resolve(reader.result);
+    reader.readAsDataURL(blob);
+  });
+}
 
 const ImageUpload = (props) => {
-  const [open, setOpen] = useState(false);
+  const { onChange, schema, model } = props;
 
-  useEffect(() => {
-    document.querySelector('.droppable-card-content .btn').addEventListener('click', (event) => {
-      setOpen(true);
-      event.preventDefault();
-    });
-  }, []);
+  const handleCapture = async (result) => {
+    const lastModel = model;
+    const newModel = await blobToBase64(result.file);
 
-  const openFilePicker = () => {
-    setOpen(false);
+    onChange(newModel, schema, newModel, lastModel);
 
-    const clickEvent = new PointerEvent('click');
-    clickEvent.preventDefault();
-
-    document.querySelector('.droppable-card-content .btn input').dispatchEvent(clickEvent);
+    document.querySelector('button').click();
   };
 
   return (
     <>
-      <Upload
-        animationDelay={700}
-        csButtonText="Select other file?"
-        csFailureText="Upload failed.Please, try again"
-        csSuccessText="Upload complete!"
-        csTooLargeMessage="Please provide a file smaller than 5MB"
-        csWrongTypeMessage="Please provide a supported format"
-        maxSize={5000000}
-        psButtonText="Cancel"
-        psProcessingText="Uploading..."
-        size="md"
-        usAccept="image/*"
-        usButtonText="Or Select File"
-        usDisabled={false}
-        usDropMessage="Drop file to start upload"
-        usLabel="Front of your ID document"
-        usPlaceholder="Drag and drop file less than 5MB"
-        // usHelpImage={IMAGES[0].value}
-        // httpOptions={{
-        //   url: 'https://httpbin.org/post',
-        // }}
-        // onStart={(file) => console.log('onStart', file)}
-        // onSuccess={(httpResponse, fileName) => console.log('onSuccess', httpResponse, fileName)}
-        // onFailure={(httpResponse) => console.log('onFailure', httpResponse)}
-        // onCancel={() => console.log('onCancel')}
-        // size="md"
+      <CameraCapture
+        // overlay="https://live.staticflickr.com/65535/51614393739_b334ddcbf5_z.jpg"
+        overlay="https://wise.com/public-resources/assets/camera-guidelines/passport-overlay.png"
+        outline="https://wise.com/public-resources/assets/camera-guidelines/passport-outline.png"
+        title="Front side of your ID"
+        icon="Id"
+        instructions="Please make sure that all the details are clear and the whole ID fits in the box above"
+        showPreview={false}
+        // onCancel={() => this.setState({ openCamera: false })}
+        // onError={() => this.setState({ openCamera: false })}
+        onCapture={handleCapture}
       />
-
-      <BottomSheet open={open} onClose={() => setOpen(false)}>
-        <NavigationOption showMediaAtAllSizes title="Take a picture" className="p-l-2" />
-        <NavigationOption
-          showMediaAtAllSizes
-          title="Upload a file"
-          className="p-l-2"
-          onClick={openFilePicker}
-        />
-      </BottomSheet>
     </>
   );
 };
@@ -92,6 +67,7 @@ ImageUpload.propTypes = {
   onChange: Types.func.isRequired,
   submitted: Types.bool.isRequired,
   disabled: Types.bool,
+  onAction: Types.func.isRequired,
 };
 
 export default ImageUpload;

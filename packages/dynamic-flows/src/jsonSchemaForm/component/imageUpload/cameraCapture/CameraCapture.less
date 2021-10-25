@@ -1,0 +1,212 @@
+#cameraLoader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1040;
+
+  background-color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#camera {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1030;
+
+  background: black;
+
+  &.translucent {
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  &.mirrored {
+    #cameraViewfinder,
+    #cameraViewfinderSnapshot {
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+    }
+  }
+}
+
+#cameraViewfinder {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1031;
+  //object-fit: contain; // it's usually already the default, but just in case of quirky browsers.
+}
+
+#cameraViewfinderLayers {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index: 1032;
+
+  // center the overlay image.
+  //background-position: center;
+  //background-size: contain;
+  //background-repeat: no-repeat;
+}
+
+#cameraViewfinderSnapshot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1033;
+
+  canvas {
+    position: fixed;
+    z-index: 1033;
+
+    // center in parent.
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 100%;
+    max-width: 100%;
+  }
+}
+
+.camera-ctrl-box-small {
+  width: 100%;
+  vertical-align: bottom;
+  display: flex;
+  justify-content: space-around;
+}
+
+//.camera-ctrl-box-big {
+//  display: inline-block;
+//  height: 84px;
+//  width: 84px;
+//  margin-left: 36px;
+//  margin-right: 36px;
+//  vertical-align: bottom;
+//}
+
+.camera-ctrl-btn-cancel {
+  color: red;
+  background-color: #f8f9fa;
+}
+
+.camera-ctrl-btn-confirm {
+  color: green;
+  background-color: #f8f9fa;
+}
+
+.camera-ctrl-btn-small {
+  height: 56px;
+  width: 56px;
+  display: inline-flex;
+  vertical-align: top;
+  justify-content: center;
+  align-items: center;
+  padding-top: 8px;
+
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border-radius: 50%;
+}
+
+.camera-ctrl-btn-big-inner {
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  margin: 2px;
+  background-color: #f8f9fa;
+  border-radius: 50%;
+  transition: all 0.15s ease-in-out;
+}
+
+.camera-ctrl-btn-big {
+  display: inline-block;
+  height: 76px;
+  width: 76px;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 6px solid #f8f9fa;
+  border-radius: 50%;
+  transition: all 0.15s ease-in-out;
+
+  &:hover {
+    border-color: darken(#f8f9fa, 15%);
+
+    .camera-ctrl-btn-big-inner {
+      background-color: darken(#f8f9fa, 15%);
+    }
+  }
+
+  &:active {
+    border-color: darken(#f8f9fa, 30%);
+
+    .camera-ctrl-btn-big-inner {
+      background-color: darken(#f8f9fa, 30%);
+    }
+  }
+}
+
+[class*='camera-ctrl-bar'] {
+  z-index: 1034 !important;
+}
+
+.camera-ctrl-bar-top {
+  padding-left: 0.8em;
+  padding-top: 1.5em;
+  display: flex;
+}
+
+.camera-ctrl-bar-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fixed-bottom {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+.fixed-top {
+  position: fixed;
+  right: 0;
+  top: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+.camera-ctrl-title {
+  color: white;
+}
+
+.camera-ctrl-icon {
+  color: white;
+}
