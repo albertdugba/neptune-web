@@ -19,7 +19,7 @@ export const isPersistAsyncSchema = (schema) => !!schema.persistAsync;
 export const isValidationAsyncSchema = (schema) => !!schema.validationAsync;
 
 export const isImageUploadSchema = (schema) =>
-  schema.type === 'string' && schema.format === 'base64url';
+  schema.type === 'string' && schema.format === 'base64url' && schema.source === 'camera';
 
 export const isObjectSchema = (schema) => schema.type === 'object';
 
