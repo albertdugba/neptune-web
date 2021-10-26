@@ -44,6 +44,14 @@ export const Basic = () => {
             currency: 'gbp',
             searchable: 'England, Scotland, Wales',
           },
+          {
+            value: 'USD',
+            label: 'USD - Outside of the US',
+            note: 'United States Dollar',
+            currency: 'usd',
+            global: true,
+            searchable: 'United States, Spain, Germany, France, Austria',
+          },
         ]}
         selectedCurrency={{
           value: 'EUR',
