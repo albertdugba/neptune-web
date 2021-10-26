@@ -1,4 +1,4 @@
-import { Profile as ProfileIcon } from '@transferwise/icons';
+import { Profile as ProfileIcon, Globe as GlobeIcon } from '@transferwise/icons';
 import { shallow } from 'enzyme';
 
 import Option from './Option';
@@ -39,6 +39,19 @@ describe('option', () => {
   it('does not show currency icons on mobile if it is selected', () => {
     const flagHiddenOnMobile = () => component.find('i.currency-flag').hasClass('hidden-xs');
     component.setProps({ currency: 'hustle' });
+    expect(flagHiddenOnMobile()).toBe(false);
+    component.setProps({ selected: true });
+    expect(flagHiddenOnMobile()).toBe(true);
+  });
+
+  it('renders the globe icon for a global currency', () => {
+    component.setProps({ currency: 'hustle', global: true });
+    expect(component.find(GlobeIcon)).toHaveLength(1);
+  });
+
+  it('does not the show globe icon on mobile if it is selected', () => {
+    const flagHiddenOnMobile = () => component.find(GlobeIcon).hasClass('hidden-xs');
+    component.setProps({ currency: 'hustle', global: true });
     expect(flagHiddenOnMobile()).toBe(false);
     component.setProps({ selected: true });
     expect(flagHiddenOnMobile()).toBe(true);

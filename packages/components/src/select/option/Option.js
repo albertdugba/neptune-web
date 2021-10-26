@@ -13,7 +13,12 @@ const Option = ({ currency, label, note, secondary, icon, classNames, selected, 
       ])}`
     : null;
   const currencyIcon = global ? (
-    <GlobeIcon size={24} filled data-testid="globe-icon" />
+    <GlobeIcon
+      size={24}
+      filled
+      data-testid="globe-icon"
+      className={`${selected ? 'hidden-xs' : ''}`}
+    />
   ) : (
     <i className={currencyClassNames} />
   );

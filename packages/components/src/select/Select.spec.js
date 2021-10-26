@@ -37,6 +37,7 @@ describe('Select', () => {
         { value: 0, label: 'yo' },
         { value: 1, label: 'dawg' },
         { value: 2, label: 'boi' },
+        { value: 0, label: 'ay', global: true },
       ],
     };
     Transition.mockImplementation((properties) => {
@@ -211,6 +212,7 @@ describe('Select', () => {
         note: 'yo',
         icon: <Profile />,
         currency: '',
+        global: false,
         secondary: '',
         classNames: {},
 
@@ -245,6 +247,14 @@ describe('Select', () => {
     expect(activeOptionIndex()).toBeNull();
     component.setProps({ selected: props.options[0] });
     expect(activeOptionIndex()).toBe(0);
+  });
+
+  it('shows the currently selected global currency option as active in the dropdown', async () => {
+    await openSelect();
+    component.setProps({ required: true });
+    expect(activeOptionIndex()).toBeNull();
+    component.setProps({ selected: props.options[3] });
+    expect(activeOptionIndex()).toBe(3);
   });
 
   it('renders non-clickable headers', async () => {
@@ -479,11 +489,11 @@ describe('Select', () => {
 
     // Make sure we can't move past the last option
     doTimes(3, () => component.simulate('keyDown', fakeKeyDownEventForKey(KEY_CODES.DOWN)));
-    expect(focusedOptionIndex()).toBe(2);
+    expect(focusedOptionIndex()).toBe(3);
 
     // Now move up 1 option
     component.simulate('keyDown', fakeKeyDownEventForKey(KEY_CODES.UP));
-    expect(focusedOptionIndex()).toBe(1);
+    expect(focusedOptionIndex()).toBe(2);
 
     // Move to first option and make sure we can't move past the first one
     doTimes(3, () => component.simulate('keyDown', fakeKeyDownEventForKey(KEY_CODES.UP)));
