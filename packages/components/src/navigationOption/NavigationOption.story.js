@@ -10,14 +10,14 @@ export default {
 };
 
 const Template = (props) => {
-  const href = text('href');
-  const title = text('title', 'Navigation option');
-  const content = text('content', 'Button and icon are vertically centered.');
-  const complex = boolean('complex', false);
-  const disabled = boolean('disabled', false);
-  const showMediaAtAllSizes = boolean('showMediaAtAllSizes', false);
-  const showMediaCircle = boolean('showMediaCircle', true);
-  const className = text('className');
+  const href = text('href', props.href);
+  const title = text('title', props.title ?? 'Navigation option');
+  const content = text('content', props.content ?? 'Button and icon are vertically centered.');
+  const complex = boolean('complex', props.complex ?? false);
+  const disabled = boolean('disabled', props.disabled ?? false);
+  const showMediaAtAllSizes = boolean('showMediaAtAllSizes', props.showMediaAtAllSizes ?? false);
+  const showMediaCircle = boolean('showMediaCircle', props.showMediaCircle ?? true);
+  const className = text('className', props.className);
 
   return (
     <NavigationOption
@@ -28,12 +28,11 @@ const Template = (props) => {
       href={href}
       title={title}
       content={content}
-      media={<FastFlagIcon />}
+      media={props.media || <FastFlagIcon />}
       showMediaAtAllSizes={showMediaAtAllSizes}
       showMediaCircle={showMediaCircle}
       className={className}
       onClick={action('clicked')}
-      {...props}
     />
   );
 };
@@ -48,7 +47,9 @@ export const Multiple = () => (
   </>
 );
 
-export const Illustration = () => <Template media={<ExampleIllustration />} />;
+export const Illustration = () => (
+  <Template media={<ExampleIllustration />} showMediaCircle={false} />
+);
 
 const ExampleIllustration = () => (
   <svg style={{ width: '48px' }} viewBox="0 0 46 76">
