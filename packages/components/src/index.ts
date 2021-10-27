@@ -75,6 +75,7 @@ export { default as UploadInput } from './uploadInput';
  * Hooks
  */
 export { default as useSnackbar } from './snackbar/useSnackbar';
+export { useDirection } from './common/hooks';
 
 /**
  * Enums
@@ -117,6 +118,7 @@ export {
   adjustLocale,
   getLangFromLocale,
   getCountryFromLocale,
+  getDirectionFromLocale,
   isServerSide,
   isBrowser,
 } from './common';
