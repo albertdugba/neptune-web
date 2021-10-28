@@ -3,11 +3,12 @@
  */
 export type { UploadedFile, UploadError, UploadResponse } from './uploadInput/types';
 export type { LayoutDirection } from './common';
+export type { ThemeType } from './common/theme';
 
 /**
  * Components
  */
-export { default as Provider, DirectionProvider } from './provider';
+export { default as Provider, DirectionProvider, ThemeProvider } from './provider';
 export { default as Badge } from './badge';
 export { default as Checkbox } from './checkbox';
 export { default as CheckboxButton } from './checkboxButton';
@@ -72,10 +73,15 @@ export { default as Link } from './link';
 export { default as UploadInput } from './uploadInput';
 
 /**
+ * HOCs
+ */
+export { withTheme } from './common/hocs';
+
+/**
  * Hooks
  */
 export { default as useSnackbar } from './snackbar/useSnackbar';
-export { useDirection } from './common/hooks';
+export { useDirection, useTheme } from './common/hooks';
 
 /**
  * Enums

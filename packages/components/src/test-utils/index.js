@@ -2,7 +2,7 @@ import { render } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 import userEvent from '@testing-library/user-event';
 
-import { Provider } from '..';
+import { Provider, Theme } from '..';
 import { DEFAULT_LOCALE } from '../common/locale';
 import en from '../i18n/en.json';
 
@@ -13,12 +13,12 @@ import en from '../i18n/en.json';
  */
 function customRender(
   ui,
-  { locale = DEFAULT_LOCALE, messages = en, direction, ...renderOptions } = {},
+  { locale = DEFAULT_LOCALE, messages = en, theme = Theme.LIGHT, direction, ...renderOptions } = {},
 ) {
   // eslint-disable-next-line react/prop-types
   var Wrapper = ({ children }) => {
     return (
-      <Provider i18n={{ locale, messages }} direction={direction}>
+      <Provider i18n={{ locale, messages }} theme={theme} direction={direction}>
         {children}
       </Provider>
     );
@@ -31,11 +31,13 @@ function customRender(
  * For more info: https://react-hooks-testing-library.com/usage/advanced-hooks#context
  *
  */
-function customRenderHook(callback, { locale = DEFAULT_LOCALE, messages = en, direction } = {}) {
+function customRenderHook(
+  callback,
+  { locale = DEFAULT_LOCALE, messages = en, theme = Theme.LIGHT, direction } = {},
+) {
   return renderHook(callback, {
-    // eslint-disable-next-line react/prop-types
     wrapper: ({ children }) => (
-      <Provider i18n={{ locale, messages }} direction={direction}>
+      <Provider i18n={{ locale, messages }} theme={theme} direction={direction}>
         {children}
       </Provider>
     ),
