@@ -1,4 +1,5 @@
 import Types from 'prop-types';
+
 import CameraCapture from './cameraCapture';
 
 function blobToBase64(blob) {
@@ -18,7 +19,7 @@ const ImageUpload = (props) => {
 
     onChange(newModel, schema, newModel, lastModel);
 
-    document.querySelector('button').click();
+    document.querySelector('.btn-block').click();
   };
 
   return (
